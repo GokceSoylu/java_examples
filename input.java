@@ -41,7 +41,7 @@ public class input
         System.out.printf("%ndouble t = ");
         t=ns.nextDouble();
         System.out.printf("%nz + t = %f",z+t);
-
+        ns.close();//kapatıyoruz
     }
 }
 //* Scanner bir class bu class'tan bir nesne oluşturuyoruz. Daha sonra bu nesne ile input alma methodlarına ulaşıyoruz:)

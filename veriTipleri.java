@@ -23,7 +23,8 @@ public class veriTipleri
         System.out.println(b);
     }
 }
-/*  *println ile direk islemi yazıp sonucu yazdırabilriz
+/*  
+    *println ile direk islemi yazıp sonucu yazdırabilriz
     *printf ile bu sekilde yazdıramayız
     *int/int bölmede tam sayı bölme yapar. Eğer ondalıklı bölme yapmasını istiyorsak başına (float ) yada (double) yazabiliriz.
     *int/double yada int/float bölmede ise ondalıklı bölme yapar
