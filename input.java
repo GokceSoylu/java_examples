@@ -44,3 +44,4 @@ public class input
 
     }
 }
+//* Scanner bir class bu class'tan bir nesne oluşturuyoruz. Daha sonra bu nesne ile input alma methodlarına ulaşıyoruz:)
