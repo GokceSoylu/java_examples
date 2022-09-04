@@ -16,4 +16,4 @@ public class loops //döngü yapıları c ile aynı
             System.out.println(sum);  
         }
     }
-}// do while ornwği yazmadım onun syntax'ıda c ve c++ ile aynı 
+}// do while orneği yazmadım onun syntax'ı da c ve c++ ile aynı 
