@@ -11,15 +11,16 @@ public class veriTipleri
         System.out.printf("%na = "+a+"%nb = "+b+"%nc = "+c+"%nd = "+d+"%nstring = "+string+"%nx = "+!x+"%n");
         
         //?     System.out.printf(a/e+7);   dikkat  printf ile bu şekilde yazdıramayız
+        //?     printf C'deki printf ile aynı. println ise c++'taki cout'a benziyor :))
         
         System.out.println(a/e+f);
-        System.out.println((float)a/e+f);
+        System.out.println(a/e+f);
         System.out.println(a/b);
         System.out.println(a/c);
         
         System.out.println(a/e);    //* dikkkat edelim sadece int/int yaptığımızda ondalıklı kısmı atarak böldü 
         //*     (float)a=(float)a/b;    evet komik zaten boyle bir sey yapılamaz
-        b=(float)a/b;// tabi bu mümkün. su oturdu sanırım mantık:))
+        b=(float)a/b;// tabi bu mümkün. suan oturdu sanırım mantık:))
         System.out.println(b);
     }
 }
