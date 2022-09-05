@@ -35,4 +35,4 @@ public class charArray
 //*  char array'i string oluşturmak için kullanıyorduk. Ancak java'da boyle yapamayız char array ile string olusturamayız. 
 //*  char array string dönüşümü yapabiliriz ona da değineceğim.
 //*  c++ 'da ise string tipi olmasına rağmen char array ile string oluşturabiliriz tıpkı C gibi sorun olmaz :))
-//*  atama yapmadığın durumlarda da içerisi boş olur c gibi rastgele atama yapma z:)
+//*  atama yapmadığın durumlarda da içerisi boş olur c gibi rastgele atama yapmaz :)
