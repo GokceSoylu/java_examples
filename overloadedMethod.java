@@ -1,4 +1,4 @@
-public class method2 
+public class overloadedMethod 
 {
     public static void main(String[] Soylu)
     {
@@ -22,6 +22,6 @@ public class method2
         System.out.println("char "+ c);
     }
 }
-// overloading 
-// √overriding 
+// √overloading 
+// overriding  sadece aynı isim
 // tipsiz :))
