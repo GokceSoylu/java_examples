@@ -23,5 +23,6 @@ public class overloadedMethod
     }
 }
 // √overloading 
+// java overloaded operator 'ü desteklemez'
 // overriding  sadece aynı isim
 // tipsiz :))
