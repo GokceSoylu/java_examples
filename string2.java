@@ -26,5 +26,4 @@ public class string2
         std3[0]=new String(std4);
         System.out.println(std3[0]);// 💃🏻
     }
-
 }

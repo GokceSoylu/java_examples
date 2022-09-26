@@ -17,5 +17,6 @@ public class string
         System.out.printf("%c %c%n",a,b);
         System.out.println(a);
         System.out.println(b);
+        in.close();
     }    
 }

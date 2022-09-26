@@ -8,7 +8,7 @@ public class println_
         System.out.println("the answer "+a+b);//string gibi degerleri yan yana yazdırıyor
         System.out.println("the answer "+(a+b));//parantez içinin işlemğini yapıp yazdırıyor
         System.out.println("the aswer "+a*b);// * + dan öncelikli --> ez cümle işlem önceliğine vardır
-        //! System.out.println("the answer "+a-b); hata verir çünkü işlem önceliği yok. Soldan yazdırmaya baslar aa yı string olarak ekler ama -  ifdesini tanımaz. 
+        //! System.out.println("the answer "+a-b); hata verir çünkü - ve + işlem önceliği yok. Soldan yazdırmaya baslar string yazar a'yı  ekleyecek ama -  ifdesini tanımaz. 
         System.out.println("the answer "+(a-b));
         System.out.println("the answer "+a/b);//tam bolme
         System.out.println("the answer "+(float)a/b);//ondaklıklı bolme
