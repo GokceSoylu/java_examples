@@ -50,6 +50,6 @@ public class matris//hızımı alamadım fonk attım :))
 }//sanırımm syntax anlaşılır oldu. Dikkat edeceğimiz new kullandığımız yerde initializing yapamayız 
 //c'den net farkı 
 //  *)int a[2][2]; şklinde tanımlama yapamayız!
-//  *)new malloc gibi olduğu için new ile yer alarak değişken size/ı kadar yer alınabilir int a,b; int m[][]=new in[a][b];
+//  *)new malloc gibi olduğu için new ile yer alarak değişken size/ı kadar yer alınabilir int a=2, b=3; int m[][]=new in[a][b];
 //  *)int[][]m; şeklinde pekte gözümüzün alışkın olmadığı bir tanımlama doğru :)) ki anladığım kadarıyla yaygın olanda bu :)
  

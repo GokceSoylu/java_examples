@@ -51,6 +51,7 @@ print ise c++'daki cout'a benziyor. >> yerine + kullanıyor sadece :). println i
                 *  the aswer 0.5
                 *  the answer 0.0
                 */
+
 ### İnput
 Bu biraz değişik. Scanner sınıfından bir nesne oluşturup, bu nesne sayesinde input metodlarına ulaşıyoruz. 
                 public static void main(String[] args)
@@ -76,6 +77,42 @@ tipik char, int, float, double, char var. C'den farklı olarak boolean ve String
 bunun üzerinde durmeyeacağım for, while, do while, break. continue, switch hatta if else C'dekinin aynısı syntax 'ta dahil olmak üzere hiçbir fark yok. [örnek](https://github.com/NecmiyeSoylu/java_examples/blob/master/loops.java) [örnek](https://github.com/NecmiyeSoylu/java_examples/blob/master/loops2.java)
 
 ### Diziler
+C'de olduğu her tipten dizi oluşturabiliriz. yine [] parantezini kullanırız C'den farklı olarak []'in içine boyutu yazmayız:)
+
+int[] a;
+float[] b;
+char[] c; 
+
+gibi. int a[]; yazımıda doğrudur. hata almayız. özellikleri C'deki ile aynı. sadece char dis
+disinde farklılık var.C'de string diye bir değişken tipi yoktu. O yüzden Char dizisi aynı zamanda string olaark kullanılıyordu. Char dizisi hem kendi özelliklerine hem string'in özelliklerine sahşpti diyebşliriz. Java'da ise String özelliklerine String sahiptir. char dizisi isse sadece char dizisine ait özelliklere sahip, stringin özelliklerini taşımaz. 
+
+- char a[]="soylu"; yanlış "" bu tırnak string için kullanılır
+- char a[]='soylu'; yanlış çünkü uzun tek karakter olmalı
+- char a[]={'s','o','y','l','u'}; doğru :)) işte böyle yola gel 😁
+
+Çok boyutlu dizilere gelirsek. Burasıda aynı.
+int[][] aa;
+float[][] aa;
+char[][] aa;
+                public static void main(String[] args)
+                {
+                    int row,column;
+                    Scanner in=new Scanner(System.in);
+                    row=in.nextInt();
+                    column=in.nextInt();
+                        
+                    //! int matris[2][2]; wrong
+                    int[][] matris1={{1,2},{3,4}};
+                    int[][] matris2=new int[2][2];
+                    int[][] matris3=new int[row][column]; 
+                    int[][] matris5;
+                    matris5=new int [3][3];
+                }
+                //sanırımm syntax anlaşılır oldu. Dikkat edeceğimiz new kullandığımız yerde initializing yapamayız 
+                // c'den net farkı 
+                //  *)int a[2][2]; şklinde tanımlama yapamayız!
+                //  *)new malloc gibi olduğu için new ile yer alarak değişken size/ı kadar yer alınabilir. 
+                //  *)int[][]m; şeklinde pekte gözümüzün alışkın olmadığı bir tanımlama doğru :)) ki anladığım kadarıyla yaygın olanda bu :)
 
 ### String 
 Geldi gönlümün efendisi :) 
