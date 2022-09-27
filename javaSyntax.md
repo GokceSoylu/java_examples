@@ -239,14 +239,14 @@ tipsiz fonksiyon oluştutucaz. yukarıda farklı tipte paremetrelere sahip fonks
                     public static void main(String[] Soylu)
                     {
                         char x='A';
-                        add(x);
+                        function(x);
                     }    
-                    static <T> void add(T t)
+                    static < T > void function(T t)
                     {
-                        System.out.println("the element is "+ t);
+                        System.out.print("the element is "+ t);
                     }
                 }   
-
+< T > ifadesi değiştirilebilir bu bizim belirdeğimiz tipin ismi bundan ksıt genel belirsiz tip demek. ben sana hangi tipi gönderirisem kabul et diyoruz. paremetre göndermeye benziyor fonk(int x) dediğimiz zaman sana gönderilen x'i fonksiyonda x gördüğün yere yaz kullan diyoruz ya onun gibi < T > diye bir tip var. bunun ne olduğunu belirticem diyoruz. buradaki örnekleri incelelim list kısmında biraz dah değiniyoruz
                 public class genericMethod2 
                 {
                     public static void main(String[] Soylu)
@@ -254,7 +254,7 @@ tipsiz fonksiyon oluştutucaz. yukarıda farklı tipte paremetrelere sahip fonks
                         int a=10, b=20;
                         System.out.print(fonk(a,b));
                     }    
-                    static <tipsiz> tipsiz fonk(tipsiz x, tipsiz y)
+                    static < tipsiz > tipsiz fonk(tipsiz x, tipsiz y)
                     {
                         x=y;
                         return x;
@@ -276,3 +276,4 @@ tipsiz fonksiyon oluştutucaz. yukarıda farklı tipte paremetrelere sahip fonks
                         fonk(a,n);
                     }
                 }
+burada 
