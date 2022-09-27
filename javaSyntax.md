@@ -230,7 +230,9 @@ Derleyici her fonksiyon iiçn önce *__Z* ifadesini koyar sonra fonksiyonun harf
 Gördüğün gibi return tipine bakılmaz. Bunsdan dolayı isimleri ve paremetre listeleri aynı fakat retuern tipleri farlı olan fonksiyonlar ayırt edilemez. çok ta yüklenmeyelim :)) 
 Peki ya default paremeter ? Malesef Java'da default paremetre yazamayız.
 
-call by refarance
+call by refarence aynı. Değişkeni direkt gönderirsen kopyalar. değişken üzerinde kalıcı değişiklik yapamaz. Call by refaranceye gelince pointer... java'da pointer yok!😳 
+call by refarance yapmak için dizinin direkt ismiyle gönderebiliriz. yada aynı class içindeyse fonksiyon direkt değişkenşn kendisine ulaşabiliyor ya öyle değiştirebiliriz. Yani burada pointer mantığını kullanamayız OOP yeteneğini konuştur diyor :)
+[örenk](https://github.com/NecmiyeSoylu/java_examples/blob/master/callByRefarence.java)
 
 kolay geldi galiba biraz :) o zaman beyinleri yakalım🔥 konumuz generic metod. Normalde generic class faln dah çok oop kısmında kullanıcaz ancak burada da bir giriş yapalım.
 tipsiz fonksiyon oluştutucaz. yukarıda farklı tipte paremetrelere sahip fonksiyonlar yazdık burada ise kod partı ismi her şeyi aynı sadece paremetrelerin/retur'un tipi farklı olan metod yazmak istiyoruz. yahu adamların her şeyi aynı bir tek tip farklı bunun için farklı farklı fonksiyonlar mı yazalım? hayır yazmayalıımm:)) <> bu şekil ile tipini bizim belirleyeceğimiz metodlar yazılabliriz
@@ -246,7 +248,7 @@ tipsiz fonksiyon oluştutucaz. yukarıda farklı tipte paremetrelere sahip fonks
                         System.out.print("the element is "+ t);
                     }
                 }   
-< T > ifadesi değiştirilebilir bu bizim belirdeğimiz tipin ismi bundan ksıt genel belirsiz tip demek. ben sana hangi tipi gönderirisem kabul et diyoruz. paremetre göndermeye benziyor fonk(int x) dediğimiz zaman sana gönderilen x'i fonksiyonda x gördüğün yere yaz kullan diyoruz ya onun gibi < T > diye bir tip var. bunun ne olduğunu belirticem diyoruz. buradaki örnekleri incelelim list kısmında biraz dah değiniyoruz
+< T > ifadesi değiştirilebilir T yerine başka bir şey de yazılabilirdi. buradaki örnekleri inceleyelim list kısmında biraz daha değiniyoruz. 
                 public class genericMethod2 
                 {
                     public static void main(String[] Soylu)
@@ -260,8 +262,7 @@ tipsiz fonksiyon oluştutucaz. yukarıda farklı tipte paremetrelere sahip fonks
                         return x;
                     }
                 }
-
-                
+burada < tipsiz > diye bir genel tip belirledik. Fonksiyonda bu tipin kullanılacağını belirtmek için static'ten önce bunu yazdık   C++'da < template > yazıyorduk ya o mantık. sonra normla int der gibi bu değişken tipini rahatlıla kullandık. < tipsiz > dediğimizde belli bir tip yoktu. biz bu fonksiyona int gönderdiğimizde artık o tipsiz den kasıt int oldu ve ona göre işleme devam etti. C++'taki template'den biraz farklı. C++'da template tipindeki değişkenlerle işlem yapabiliyordu. burada ise tipin n eolduğu belli olmadığı işlem yapamazsın diyor. Sadece aynı tipteki başka değişkene atama yapabliyoruz. işte buda daha çok class ve list kullanımı için. 
                 public class genericMethod3 
                 {
                     static <generic, generic2> void fonk(generic a, generic2 b)
@@ -276,4 +277,5 @@ tipsiz fonksiyon oluştutucaz. yukarıda farklı tipte paremetrelere sahip fonks
                         fonk(a,n);
                     }
                 }
-burada 
+
+### Liste
