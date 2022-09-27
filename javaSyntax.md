@@ -194,3 +194,34 @@ String[][] str={{"necmiye",soylu"},{"kbu","mühendislik"},{"bligisayar","mühend
                 /* Output
                 * [[necmiye, soylu], [kbu, muhendislik], [bilgisayar, mühendislik]]
                 */
+şşş sakince [örneğe](https://github.com/NecmiyeSoylu/java_examples/blob/master/tryForString.java) tıkla. 
+
+### Fonksiyonlar
+C'deki fonksiyonları biliyorsun. Burada da aynı *return_tipi Fonksiyon_adi(paremetre_listesi)* bu tipi yine kullanıyoruz bunaek olarak. Dikkat edersen main'in başına static yazmıştık, bir metodun da mainden çağırılabilmesi için static olması gerekiyor. (başına static yazıyoruz yani :)) Birde erişim belirteçleri var. yine main üzerinden bakacak olursak public static void main diyoruz buaraki public erişim belirtecidir. Diğer sınıflardan da erişilebilir olduğunu gösterir. metodlarını yazarklen bunu belirtmek zorunda değilsin bu aşamada bu önemli değil. oop kısmına geçince bundan detaylı bahsederiz.
+                public static void main()
+                {
+                    int a=10, b=20, c;
+                    c=addition(a,b);
+                }
+                static int addition(int x, int y)
+                {
+                    return x+y;
+                }
+bir şey dikkatini çekti mi. prototype yazmadık😳. java'da ister  main'den önce olsun ister sonra prototype yazmaya gerek yok :))
+
+C++'tan hatırladığımız bir overloading olayı vardı burada da yapalım mı? Öncelikle nedir bu overloading?
+aynı isimli fakat farklı paremetre listeli fonksiyonlar yazabiliyoruz. öreneğin
+static int addition(int a, int b)
+{
+    return a+b
+}
+static float addition(float a, float b)
+{
+    return a+b;
+}
+public static void main(String[] arg)
+{
+    int z=10, t=20;
+    float m=7,8, n=9.7;
+    z=addition()
+}
