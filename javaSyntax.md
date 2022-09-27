@@ -211,17 +211,22 @@ bir şey dikkatini çekti mi. prototype yazmadık😳. java'da ister  main'den �
 
 C++'tan hatırladığımız bir overloading olayı vardı burada da yapalım mı? Öncelikle nedir bu overloading?
 aynı isimli fakat farklı paremetre listeli fonksiyonlar yazabiliyoruz. öreneğin
-static int addition(int a, int b)
-{
-    return a+b
-}
-static float addition(float a, float b)
-{
-    return a+b;
-}
-public static void main(String[] arg)
-{
-    int z=10, t=20;
-    float m=7,8, n=9.7;
-    z=addition()
-}
+                static int addition(int a, int b)
+                {
+                    return a+b
+                }
+                static float addition(float a, float b)
+                {
+                    return a+b;
+                }
+                public static void main(String[] arg)
+                {
+                    int z=10, t=20;
+                    float m=7,8, n=9.7;
+                    z=addition()
+                }//afilli 💃🏻
+peki ya bunu nasıl yapıyor? 
+Derleyici her fonksiyon iiçn önce *__Z* ifadesini koyar sonra fonksiyonun harf sayısını koyar yukarısı için addition 8 harf *__Z8* olur. daha sonra paremetre listesine bakar. int ,int o zaman *Z__8ii* olur. Bu sayede isimleri aynı ama parametre sayıları yada tipleri farklı olan fonksiyonlar ayırt edilebilir :).
+Gördüğün gibi return tipine bakılmaz. Bunsdan dolayı isimleri ve paremetre listeleri aynı fakat retuern tipleri farlı olan fonksiyonlar ayırt edilemez. çok ta yüklenmeyelim :)) 
+Peki ya default paremeter ? Malesef Java'da default paremetre yazamayız.
+
