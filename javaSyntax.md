@@ -230,3 +230,49 @@ Derleyici her fonksiyon iiçn önce *__Z* ifadesini koyar sonra fonksiyonun harf
 Gördüğün gibi return tipine bakılmaz. Bunsdan dolayı isimleri ve paremetre listeleri aynı fakat retuern tipleri farlı olan fonksiyonlar ayırt edilemez. çok ta yüklenmeyelim :)) 
 Peki ya default paremeter ? Malesef Java'da default paremetre yazamayız.
 
+call by refarance
+
+kolay geldi galiba biraz :) o zaman beyinleri yakalım🔥 konumuz generic metod. Normalde generic class faln dah çok oop kısmında kullanıcaz ancak burada da bir giriş yapalım.
+tipsiz fonksiyon oluştutucaz. yukarıda farklı tipte paremetrelere sahip fonksiyonlar yazdık burada ise kod partı ismi her şeyi aynı sadece paremetrelerin/retur'un tipi farklı olan metod yazmak istiyoruz. yahu adamların her şeyi aynı bir tek tip farklı bunun için farklı farklı fonksiyonlar mı yazalım? hayır yazmayalıımm:)) <> bu şekil ile tipini bizim belirleyeceğimiz metodlar yazılabliriz
+                public class genericMethod 
+                {
+                    public static void main(String[] Soylu)
+                    {
+                        char x='A';
+                        add(x);
+                    }    
+                    static <T> void add(T t)
+                    {
+                        System.out.println("the element is "+ t);
+                    }
+                }   
+
+                public class genericMethod2 
+                {
+                    public static void main(String[] Soylu)
+                    {
+                        int a=10, b=20;
+                        System.out.print(fonk(a,b));
+                    }    
+                    static <tipsiz> tipsiz fonk(tipsiz x, tipsiz y)
+                    {
+                        x=y;
+                        return x;
+                    }
+                }
+
+                
+                public class genericMethod3 
+                {
+                    static <generic, generic2> void fonk(generic a, generic2 b)
+                    {
+                        System.out.println(a);
+                        System.out.print(b);
+                    }    
+                    public static void main(String[] Soylu)
+                    {
+                        int a=10;
+                        String n="number";
+                        fonk(a,n);
+                    }
+                }
