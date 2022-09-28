@@ -74,21 +74,30 @@ Genel mantık bu şkeilde. charAt() fonksiyonununa gelince buarada paremetre ola
 tipik char, int, float, double, char var. C'den farklı olarak boolean ve String var. boolean c++'dakı bool. true, false iki şekilde olabiliyor. String ise adı üstünde string oluşturmamız sağlıyor. boyle ayrı bir değişken tipinin olması bize C'den farklı ozellikler kazandırıyor. String herhangi bir fonksiyon kullanılmadan değiştiribiliyor. ancak char dizisini string gibi kullanamıyoruz vb. buna string başlılığı altında detaylı değiniyorum. değişken tipler [örenk](https://github.com/NecmiyeSoylu/java_examples/blob/master/veriTipleri.java)
 
 ### Döngüler
-bunun üzerinde durmeyeacağım for, while, do while, break. continue, switch hatta if else C'dekinin aynısı syntax 'ta dahil olmak üzere hiçbir fark yok. [örnek](https://github.com/NecmiyeSoylu/java_examples/blob/master/loops.java) [örnek](https://github.com/NecmiyeSoylu/java_examples/blob/master/loops2.java)
+bunun üzerinde durmayacağım for, while, do while, break, continue, switch hatta if else C'dekinin aynısı syntax 'da dahil olmak üzere hiçbir fark yok. [örnek](https://github.com/NecmiyeSoylu/java_examples/blob/master/loops.java) [örnek](https://github.com/NecmiyeSoylu/java_examples/blob/master/loops2.java)
 
 ### Diziler
-C'de olduğu her tipten dizi oluşturabiliriz. yine [] parantezini kullanırız C'den farklı olarak []'in içine boyutu yazmayız:)
-
-int[] a;
-float[] b;
-char[] c; 
-
-gibi. int a[]; yazımıda doğrudur. hata almayız. özellikleri C'deki ile aynı. sadece char dis
-disinde farklılık var.C'de string diye bir değişken tipi yoktu. O yüzden Char dizisi aynı zamanda string olaark kullanılıyordu. Char dizisi hem kendi özelliklerine hem string'in özelliklerine sahşpti diyebşliriz. Java'da ise String özelliklerine String sahiptir. char dizisi isse sadece char dizisine ait özelliklere sahip, stringin özelliklerini taşımaz. 
+degisken_tipi [] dizi_adı; şeklinde oluşturulur. Her değişken tipinde oluşturulabilir. dizi mantığı kullanımı, C ile aynı sadece initialing kısmında bir farklılık var. 
+                int[] a;// dikkat edelim [indis değeri yazmadık]
+                int[] a={1,2,3};
+                int[] a=new int[2];// new kullanırken boyut belirttik
+                int[] a=new int[]{1,2,3};// initialize edeceksek new kullansakta boyut yazmadık
+Şahsen aklımda şöyle kalıyor initilize edeceğimiz yerde java ben zaten kaç tane olduğunu görüyorum daha niye yazıyosun diyor :)) int a[]; yazımıda doğrudur. hata almayız. özellikleri C'deki ile aynı. sadece  char dizisinde ufak farklılıklar var.
+C'de string diye bir değişken tipi yoktu. O yüzden Char dizisi aynı zamanda string olarak kullanılıyordu. Char dizisi hem kendi özelliklerine hem string'in özelliklerine sahipti diyebşliriz. Java'da ise String özelliklerine String sahiptir. char dizisi isse sadece char dizisine ait özelliklere sahip, stringin özelliklerini taşımaz. 
 
 - char a[]="soylu"; yanlış "" bu tırnak string için kullanılır
-- char a[]='soylu'; yanlış çünkü uzun tek karakter olmalı
+- char a[]='soylu'; yanlış çünkü uzun. Tek karakter olmalı
 - char a[]={'s','o','y','l','u'}; doğru :)) işte böyle yola gel 😁
+Yazdırmaya alakalıda bize kolaylık sağlaycak bir fonksiyonıumuz var *length* 
+                public class array_length 
+                {
+                    public static void main(String[] Soylu)
+                    {
+                        int a[]=new int[]{1,2,3,4,5};
+                        for(int i=0;i < a.length;i++)
+                            System.out.print(a[i]+" ");
+                    }    
+                }
 
 Çok boyutlu dizilere gelirsek. Burasıda aynı.
 int[][] aa;
@@ -105,19 +114,33 @@ char[][] aa;
                     int[][] matris1={{1,2},{3,4}};
                     int[][] matris2=new int[2][2];
                     int[][] matris3=new int[row][column]; 
+                    int[][] matris4=new int[][]{{1,2},{3,4}};
                     int[][] matris5;
+                    
                     matris5=new int [3][3];
                 }
-                //sanırımm syntax anlaşılır oldu. Dikkat edeceğimiz new kullandığımız yerde initializing yapamayız 
+                //sanırımm syntax anlaşılır oldu. Dikkat edeceğimiz new kullandığımız yerde initializing yapacaksak boyut yazmayız
                 // c'den net farkı 
                 //  *)int a[2][2]; şklinde tanımlama yapamayız!
-                //  *)new malloc gibi olduğu için new ile yer alarak değişken size/ı kadar yer alınabilir. 
-                //  *)int[][]m; şeklinde pekte gözümüzün alışkın olmadığı bir tanımlama doğru :)) ki anladığım kadarıyla yaygın olanda bu :)
+                //  *)new malloc gibi olduğu için new ile yer değişken  kadar yer alınabilir. 
+                //  *)int[][] m; şeklinde pekte gözümüzün alışkın olmadığı bir tanımlama doğru :)) ki anladığım kadarıyla yaygın olanda bu :)
+C'de atama yapmazsak rastgele sayılar atar. Ancak Java'da atma yapmadığımızda 0 atar. *length* fonksiyonunu burada da kullanabiliriz
+                public class arrayLength 
+                {
+                    public static void main(String[] Soylu)
+                    {
+                        int[][] aa={{1,2},{3,4}};
+                        
+                        for(int i=0;i<aa.length;i++) 
+                                for(int j=0;j<aa[0].length;j++)
+                                    System.out.print(aa[i][j]+" ");
+                    }    
+                }//dikkat edelim aa.length bize satır sayısını, aa[0].length bize sutun sayısını verir.
 
 ### String 
 Geldi gönlümün efendisi :) 
-C'de normal string yapacağımız zaman char[] yapıyorduk. char str[]="necmiye"; gibi. Bu sabit oluyordu ve daha sonra değiştirileiyordu. İstediğimiz zaman %s ile direkt yazdırabiliyor yada istediğimiz elemana str[2] diyerek ulaşbiliyorduk. ayrıca elmanlı bir char dizisi değimiz zaman hem char a[2]=('n','s'); hem char a[2]=("necmiye","soylu"); mümkündü. 
-Burada ise String tanımladığımız zaman en önemli farkı isteğimiz zaman değiştirebiliyor. atamayı istediğimiz zaman yapabiliyoruz.[örenk](https://github.com/NecmiyeSoylu/java_examples/blob/master/initialize_.java) [örnek2](https://github.com/NecmiyeSoylu/java_examples/blob/master/stringArray.java)ikinci örnek daha iyi :))
+C'de normal string yapacağımız zaman char[] yapıyorduk. char str[]="necmiye"; gibi. Bu sabit oluyordu ve daha sonra değiştirilemiyordu. İstediğimiz zaman %s ile direkt yazdırabiliyor yada istediğimiz elemana str [2] diyerek ulaşbiliyorduk. ayrıca 2 elmanlı bir char dizisi değimiz zaman hem char a[2]=('n','s'); hem char a[2]=("necmiye","soylu"); mümkündü. 
+Burada ise String tanımladığımız zaman en önemli farkı isteğimiz zaman değiştirebiliyor, atamayı istediğimiz zaman yapabiliyoruz.[örenk](https://github.com/NecmiyeSoylu/java_examples/blob/master/initialize_.java) [örnek2](https://github.com/NecmiyeSoylu/java_examples/blob/master/stringArray.java)ikinci örnek daha iyi :))
                 public class initialize_
                 {
                     public static void main(String[] args)
@@ -134,7 +157,8 @@ Burada ise String tanımladığımız zaman en önemli farkı isteğimiz zaman d
                         str1="KBU";
                     }
                 }//aklıma gelen tüm atama şekillerini yazdım :)) 
-Stringin tek bir elamanına ulaşmak istersiek charAt() fonksiyonunu kullanırız. paremetre olarak ulaşmak istediğimiz elmanın indexini göndeririz. orneğin tek bir elemanını yazdırmak için System.out.println(str1.charAt(0)); CharAt() fonkisiyonu bizden indexi alır ve ulaştığı char'ı dödürür. bu yüzden bu fonksiyonla Stringin bir belirli elemanını değiştiremeyiz. Bunun için dolaylı yöntemler kullanıcaz. setCharAt(index,'yeni_karakter') fonksiyonu. ancak bu fonksiyon StringBuilder tipinde kullanılabilir. o zaman bu tipte yeni bir string oluturur sonra stringini buna atar ve değiştirirsin. aşşağıda incelerseniz daha net olur.
+Stringin tek bir elamanına ulaşmak istersiek charAt() fonksiyonunu kullanırız. paremetre olarak ulaşmak istediğimiz elmanın indexini göndeririz. orneğin tek bir elemanını yazdırmak için System.out.println(str1.charAt(0)); şeklinde yazabiliriz.
+CharAt() fonkisiyonu bizden indexi alır ve ulaştığı char'ı döndürür. bu yüzden bu fonksiyonla Stringin  belirli bir elemanını değiştiremeyiz. Bunun için dolaylı yöntemler kullanıcaz. setCharAt(index,'yeni_karakter') fonksiyonu bunlardan biri. ancak bu fonksiyon StringBuilder tipinde kullanılabilir. O zaman bu tipte yeni bir string oluturur sonra stringini buna atar ve değiştirirsin. aşşağıdaki öreneği incelerseniz daha net olur.
                 public class string_eleman 
                 {
                     public static void main(String[] args)
@@ -147,8 +171,8 @@ Stringin tek bir elamanına ulaşmak istersiek charAt() fonksiyonunu kullanırı
                         str=str_new;
                     }   
                 }
-uzatma yahu direkt str=str2; yap dersen, malesef tipleri farklı olduğu bu şekilde bir atama yapamıyoruz. bole new kullanarak dolaylı yoldan kopyalıyoruz :))
-gelelim string dizisine. ops! string zaten dizi değil miydi?😳 hayır dostum değil. string bir değişken tipi bu yüzden tek bir elemanına ulaşırken karnımız çatlıyo. bak şimdi string dizisinin bir elmanına ulaşırken hiç sorun yaşamıyıcaz çünkü normal bir dizi :))
+uzatma yahu direkt str=str2; yap dersen, malesef tipleri farklı olduğu için bu şekilde bir atama yapamıyoruz. boyle new kullanarak dolaylı yoldan kopyalıyoruz :))
+gelelim string dizisine. ops! string zaten dizi değil miydi?😳 Hayır dostum değil. string bir değişken tipi. Zaten bu yüzden tek bir karaketerine ulaşmak istediğimizde karnımız çatlıyo. Bak, şimdi string dizisinin bir elmanına ulaşırken hiç sorun yaşamıyıcaz çünkü normal bir dizi :))
                 public static void main(String[] Soylu)
                 {
                     String[] dizi={"atama","sekli"};
@@ -160,8 +184,8 @@ gelelim string dizisine. ops! string zaten dizi değil miydi?😳 hayır dostum 
                 
                     dizi2[1]="ata"; //değiştirdim işte :))
                 }    
-nasıl yazdırıcaz dersen C'de yaptığımız gibi döngüye sokup elemanları tek tek yazdırabilirsin. yada Arrays.toString() fonksiyonunu kullanabilirsin. ancak direkt print(str) şeklinde yazdıramzsın. inceleyelim
-                import java.util.Arrays;// fonksiyon için kütüphanemizi dahil ediyoruz :))
+nasıl yazdırıcaz dersen C'de yaptığımız gibi döngüye sokup elemanları tek tek yazdırabilirsin. Yada *Arrays.toString()* fonksiyonunu kullanabilirsin. ancak direkt print(str) şeklinde yazdıramzsın. İnceleyelim.
+                import java.util.Arrays; // fonksiyon için kütüphanemizi dahil ediyoruz :))
                 public class stringPrint 
                 {
                     public static void main(String[] Soylu)
@@ -180,8 +204,8 @@ nasıl yazdırıcaz dersen C'de yaptığımız gibi döngüye sokup elemanları 
                 * [Ljava.lang.String;@251a69d7
                 * [necmiye, soylu, kbu]
                 */  
-çok boyutlu String dizi. String[][] str; şeklinde oluşturulur. Yine parantezlerin içine sayı yazılmaz. 
-String[][] str={{"necmiye",soylu"},{"kbu","mühendislik"},{"bligisayar","mühendisligi"}}; şeklinde initilize edebililriz. yazdırmaya gelince deepToString() fonksiyonunu kullanıcaz
+Çok boyutlu String dizi. String[][] str; şeklinde oluşturulur. Yine parantezlerin içine sayı yazılmaz. 
+String[][] str={{"necmiye",soylu"},{"kbu","mühendislik"},{"bligisayar","mühendisligi"}}; şeklinde initilize edebililriz. yazdırmaya gelince *deepToString()* fonksiyonunu kullanıcaz
                 import java.util.Arrays;
                 public class stringPrintMulti 
                 {
@@ -194,13 +218,13 @@ String[][] str={{"necmiye",soylu"},{"kbu","mühendislik"},{"bligisayar","mühend
                 /* Output
                 * [[necmiye, soylu], [kbu, muhendislik], [bilgisayar, mühendislik]]
                 */
-şşş sakince [örneğe](https://github.com/NecmiyeSoylu/java_examples/blob/master/tryForString.java) tıkla. 
+şşş sakince [örneğe](https://github.com/NecmiyeSoylu/java_examples/blob/master/tryForString.java) tıklayınız. 
 
 ### Fonksiyonlar
 C'deki fonksiyonları biliyorsun. Burada da aynı *return_tipi Fonksiyon_adi(paremetre_listesi)* bu tipi yine kullanıyoruz bunaek olarak. Dikkat edersen main'in başına static yazmıştık, bir metodun da mainden çağırılabilmesi için static olması gerekiyor. (başına static yazıyoruz yani :)) Birde erişim belirteçleri var. yine main üzerinden bakacak olursak public static void main diyoruz buaraki public erişim belirtecidir. Diğer sınıflardan da erişilebilir olduğunu gösterir. metodlarını yazarklen bunu belirtmek zorunda değilsin bu aşamada bu önemli değil. oop kısmına geçince bundan detaylı bahsederiz.
                 public static void main()
                 {
-                    int a=10, b=20, c;
+                    int a=10, b=20, c;s
                     c=addition(a,b);
                 }
                 static int addition(int x, int y)
@@ -234,8 +258,8 @@ call by refarence aynı. Değişkeni direkt gönderirsen kopyalar. değişken ü
 call by refarance yapmak için dizinin direkt ismiyle gönderebiliriz. yada aynı class içindeyse fonksiyon direkt değişkenşn kendisine ulaşabiliyor ya öyle değiştirebiliriz. Yani burada pointer mantığını kullanamayız OOP yeteneğini konuştur diyor :)
 [örenk](https://github.com/NecmiyeSoylu/java_examples/blob/master/callByRefarence.java)
 
-kolay geldi galiba biraz :) o zaman beyinleri yakalım🔥 konumuz generic metod. Normalde generic class faln dah çok oop kısmında kullanıcaz ancak burada da bir giriş yapalım.
-tipsiz fonksiyon oluştutucaz. yukarıda farklı tipte paremetrelere sahip fonksiyonlar yazdık burada ise kod partı ismi her şeyi aynı sadece paremetrelerin/retur'un tipi farklı olan metod yazmak istiyoruz. yahu adamların her şeyi aynı bir tek tip farklı bunun için farklı farklı fonksiyonlar mı yazalım? hayır yazmayalıımm:)) <> bu şekil ile tipini bizim belirleyeceğimiz metodlar yazılabliriz
+kolay geldi galiba biraz :) o zaman beyinleri yakalım🔥 konumuz generic metod. Normalde generic class falan daha çok oop kısmında kullanıcaz ancak burada da bir giriş yapalım.
+tipsiz fonksiyon oluşturucaz. yukarıda farklı tipte paremetrelere sahip fonksiyonlar yazdık burada ise kod partı ismi her şeyi aynı sadece paremetrelerin/retur'un tipi farklı olan metod yazmak istiyoruz. yahu adamların her şeyi aynı bir tek tip farklı bunun için farklı farklı fonksiyonlar mı yazalım? hayır yazmayalıımm:)) <> bu şekil ile tipini bizim belirleyeceğimiz metodlar yazılabliriz
                 public class genericMethod 
                 {
                     public static void main(String[] Soylu)
@@ -265,7 +289,7 @@ tipsiz fonksiyon oluştutucaz. yukarıda farklı tipte paremetrelere sahip fonks
 burada < tipsiz > diye bir genel tip belirledik. Fonksiyonda bu tipin kullanılacağını belirtmek için static'ten önce bunu yazdık   C++'da < template > yazıyorduk ya o mantık. sonra normla int der gibi bu değişken tipini rahatlıla kullandık. < tipsiz > dediğimizde belli bir tip yoktu. biz bu fonksiyona int gönderdiğimizde artık o tipsiz den kasıt int oldu ve ona göre işleme devam etti. C++'taki template'den biraz farklı. C++'da template tipindeki değişkenlerle işlem yapabiliyordu. burada ise tipin n eolduğu belli olmadığı işlem yapamazsın diyor. Sadece aynı tipteki başka değişkene atama yapabliyoruz. işte buda daha çok class ve list kullanımı için. 
                 public class genericMethod3 
                 {
-                    static <generic, generic2> void fonk(generic a, generic2 b)
+                    static < generic, generic2 > void fonk(generic a, generic2 b)
                     {
                         System.out.println(a);
                         System.out.print(b);
@@ -279,3 +303,4 @@ burada < tipsiz > diye bir genel tip belirledik. Fonksiyonda bu tipin kullanıla
                 }
 
 ### Liste
+
