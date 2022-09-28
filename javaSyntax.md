@@ -9,8 +9,8 @@
                     }
                 }
 
-Genel yazım yukarıdaki gibidir.  "First" benim koyduğum isim bunu değiştirebiliriz. Önemli bir ayrıntı projenin adı ve sınıfın adı aynı aynı olmak zorunda.  yai bu kod partı için proje ismim first.java .   C deki main fonksiyonun olması gibi burada da main method bulunur. (method ve fonksiyon aynı şey. Java'da fonksiyonlara method diyeceğiz). kod derlenmeye main metotdan başlanır. Ve main method bulunması zorunludur. "public static void" kısmında değişiklik yapmayız. main fonksiyon public ve static olmak zorundadır. arg kısmına gelince buaraya istediğin şeyi yazabilirsin. istersen mahmut yaz :)
-zaten viod yazmamızdan anlayacağın gibi main'de return'e ihtiyacımız yok. 
+Genel yazım yukarıdaki gibidir.  "First" benim koyduğum isim bunu değiştirebiliriz. Önemli bir ayrıntı projenin adı ve sınıfın adı aynı aynı olmak zorunda.  yai bu kod partı için proje ismim first.java   C deki main fonksiyonun olması gibi burada da main method bulunur. (method ve fonksiyon aynı şey. Java'da fonksiyonlara method diyeceğiz). kod derlenmeye main metotdan başlanır. Ve main method bulunması zorunludur. "public static void" kısmında değişiklik yapmayız. main fonksiyon public ve static olmak zorundadır. arg kısmına gelince buaraya istediğin şeyi yazabilirsin. istersen mahmut yaz :)
+zaten void yazmamızdan anlayacağın gibi main'de return'e ihtiyacımız yok. 
 
 ### Yazdırma
 ekrana yazdırmak için kullanabileceğimiz üç farklı method var. print, println ve printf bunların syntax'ı 
@@ -98,6 +98,18 @@ Yazdırmaya alakalıda bize kolaylık sağlaycak bir fonksiyonıumuz var *length
                             System.out.print(a[i]+" ");
                     }    
                 }
+Kolaylılar bitmiyordu :)) birde foreach var. foreach'i dizilier liste gibi aynı sıralı değişkenlerde kullanılabilir.
+                public class foreach 
+                {
+                    public static void main(String[] Soylu)
+                    {
+                        int[] a=new int[]{1,2,3,4,5};
+                        for(int i:a)
+                            System.out.print(i+" ");
+                    }    
+                }//anladık mı mevzuyu? dizimiz tipinde bir değişken oluşturuyoruz bu değişkene dizimizin elemalarını teker teker atıyoruz :)
+foreach mantığını [örnek](https://github.com/NecmiyeSoylu/java_examples/blob/master/foreach2.java) ile netleştirebiliriz. 
+Char dizisi foreach kullanımı [örneği](https://github.com/NecmiyeSoylu/java_examples/blob/master/foreachChar.java).
 
 Çok boyutlu dizilere gelirsek. Burasıda aynı.
 int[][] aa;
@@ -136,7 +148,17 @@ C'de atama yapmazsak rastgele sayılar atar. Ancak Java'da atma yapmadığımız
                                     System.out.print(aa[i][j]+" ");
                     }    
                 }//dikkat edelim aa.length bize satır sayısını, aa[0].length bize sutun sayısını verir.
-
+bir de foreach kullanımına bakalım
+                public class foreachMatris 
+                {
+                    public static void main(String[] Soylu)
+                    {
+                        int[][] aa=new int[][]{{1,2,3},{4,5,6}};
+                        for(int[] i:aa)
+                            for(int j:i)
+                                System.out.println(j);
+                    }    
+                }// maytis mantiğini biliyoruz. ilk boyuttaki her elaman bir dizi gibidir aa[0] üç elemanlı bir dizidir :)) 
 ### String 
 Geldi gönlümün efendisi :) 
 C'de normal string yapacağımız zaman char[] yapıyorduk. char str[]="necmiye"; gibi. Bu sabit oluyordu ve daha sonra değiştirilemiyordu. İstediğimiz zaman %s ile direkt yazdırabiliyor yada istediğimiz elemana str [2] diyerek ulaşbiliyorduk. ayrıca 2 elmanlı bir char dizisi değimiz zaman hem char a[2]=('n','s'); hem char a[2]=("necmiye","soylu"); mümkündü. 
