@@ -193,8 +193,17 @@ CharAt() fonkisiyonu bizden indexi alır ve ulaştığı char'ı döndürür. bu
                         str=str_new;
                     }   
                 }
-uzatma yahu direkt str=str2; yap dersen, malesef tipleri farklı olduğu için bu şekilde bir atama yapamıyoruz. boyle new kullanarak dolaylı yoldan kopyalıyoruz :))
-gelelim string dizisine. ops! string zaten dizi değil miydi?😳 Hayır dostum değil. string bir değişken tipi. Zaten bu yüzden tek bir karaketerine ulaşmak istediğimizde karnımız çatlıyo. Bak, şimdi string dizisinin bir elmanına ulaşırken hiç sorun yaşamıyıcaz çünkü normal bir dizi :))
+uzatma yahu direkt str=str2; yap dersen, malesef tipleri farklı olduğu için bu şekilde bir atama yapamıyoruz. Böyle new kullanarak dolaylı yoldan kopyalıyoruz :)) Char diziyide string yapabiliriz. Bu kopyalama mantığına benziyor.
+                public class charString 
+                {
+                    public static void main(String[] Soylu)
+                    {
+                        char[] array={'k','a','r','a','c','a'};
+                        String theArray=new String(array);
+                        System.out.print(theArray);
+                    }    
+                }
+Gelelim string dizisine. ops! string zaten dizi değil miydi?😳 Hayır dostum değil. string bir değişken tipi. Zaten bu yüzden tek bir karaketerine ulaşmak istediğimizde karnımız çatlıyo. Bak, şimdi string dizisinin bir elmanına ulaşırken hiç sorun yaşamıyıcaz çünkü normal bir dizi :))
                 public static void main(String[] Soylu)
                 {
                     String[] dizi={"atama","sekli"};
@@ -241,7 +250,34 @@ String[][] str={{"necmiye",soylu"},{"kbu","mühendislik"},{"bligisayar","mühend
                 * [[necmiye, soylu], [kbu, muhendislik], [bilgisayar, mühendislik]]
                 */
 şşş sakince [örneğe](https://github.com/NecmiyeSoylu/java_examples/blob/master/tryForString.java) tıklayınız. 
+bir de forech ile yazdırmaya bakalım
+                public class foreachString 
+                {
+                    public static void main(String[] Soylu)
+                    {
+                        String[] str0=new String[]{"kbu","bilgisayar","nuhendisligi"};
+                        String[][] str=new String[][]{{"necmiye","soylu"},{"cem","karaca"},{"ismail","abi"}};
+                        for(String a:str0)
+                            System.out.print(a+" ");
 
+                        System.out.println();
+
+                        for(String[] x:str)
+                            for(String y:x)
+                                System.out.print(y+" ");
+                    }    
+                }//dikkat edelim direkt bir string oluşturup bunun teker teker char'larına ulaşmıyoruz. Foreach'i string dizizi için kulllanıyoruz. 
+                //çünkü string int gibi bir değişken türüdür. dizi oluşturulabilen bir değişken tipi. Şimdi biz bir int değişkenşn ben sadece 3.byte'ına
+                //ulaşmka istiyorum diyebiliyor muyuz? String'de de durum aynı. 
+                //bu yüzden cahrAt(), setCharAt() vb fonksiyonlarına ihtiyaç duyarızr:)) 
+
+Bu zamana kadar yahu String bir değişken tipi oyle düşün dedim ya. Aslında değil🤦🏻‍♀️ String bir sınıf, Biz bir değişken oluşturur oluşturu gibi String str; dediğimizde de aslında bir nesne oluşturmuş oluyoruz🤷🏻‍♀️. HAni [şöyle](https://github.com/NecmiyeSoylu/java_examples/blob/master/charString.java) bir örneğimiz vardı biz String str="kbu"; dediğimizde de aslında default olarak bu ornektekini yapar. Şimdi Stringimiz bir sınıf olduğuna göre bunun fonksiyonları da var. şimdi oluşturduğumuz nesne bunun metodlarına ulaşabilecek. (oop bilmiyorsan hiç sorun değil. String kütüphanesi dahil attik ve fonksiyonları kullanıyoruz gibi düşünebilirsin) Zaten String str; dedikten sonra str. dediğin zamn derleyicin sana kullanabileğin fonksiyonları öneriri. birkaçından burada da behsedelim.
+
+- int length(void) stringin uzunluğunu dödürür. [örenk](https://github.com/NecmiyeSoylu/java_examples/blob/master/stringLength.java)
+- String concat(String str) paremetre olarak verilen stringi, bizim stringimize ekeler. Ve yeni bir string döndürür. Dikkat edelim bizim stringimizin yapısını değiştiremez [örenk](https://github.com/NecmiyeSoylu/java_examples/blob/master/concat.java)
+- int indexOf(char) parametre olarak gönderilen karterin Stringin kaçıncı stringinde olduğunu gösterir. [Örenk](https://github.com/NecmiyeSoylu/java_examples/blob/master/indexOfChar.java)
+- String replace(String str1,String str2); bu fonksiyon bizim stringimizde parametre olarak berilen ilk string ile verilen ikinci stringi değiştirerek yeni bir string dödürür. Aynın şekilde asıl stringimizi değiştiremez. [örnke](https://github.com/NecmiyeSoylu/java_examples/blob/master/StringReplace.java)
+- boolean contains("string"); girilen değeer srtringimiz içinde geçiyor mu diye kontrol eder. [örenek]https://github.com/NecmiyeSoylu/java_examples/blob/master/stringContains.java)
 ### Fonksiyonlar
 C'deki fonksiyonları biliyorsun. Burada da aynı *return_tipi Fonksiyon_adi(paremetre_listesi)* bu tipi yine kullanıyoruz bunaek olarak. Dikkat edersen main'in başına static yazmıştık, bir metodun da mainden çağırılabilmesi için static olması gerekiyor. (başına static yazıyoruz yani :)) Birde erişim belirteçleri var. yine main üzerinden bakacak olursak public static void main diyoruz buaraki public erişim belirtecidir. Diğer sınıflardan da erişilebilir olduğunu gösterir. metodlarını yazarklen bunu belirtmek zorunda değilsin bu aşamada bu önemli değil. oop kısmına geçince bundan detaylı bahsederiz.
                 public static void main()

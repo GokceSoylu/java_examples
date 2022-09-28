@@ -13,4 +13,7 @@ public class foreachString
             for(String y:x)
                 System.out.print(y+" ");
     }    
-}
+}//dikkat edelim direkt bir string oluşturup bunun teker teker char'larına ulaşmıyoruz. Foreach'i string dizizi için kulllanıyoruz. 
+//çünkü string int gibi bir değişken türüdür. dizi oluşturulabilen bir değişken tipi. Şimdi biz bir int değişkenşn ben sadece 3.byte'ına
+//ulaşmka istiyorum diyebiliyor muyuz? String'de de durum aynı. 
+//bu yüzden cahrAt(), setCharAt() vb fonksiyonlarına ihtiyaç duyarızr:)) 
