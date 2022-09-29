@@ -472,3 +472,4 @@ LİstIterator'ın sahip olduğu ek metodlar
                 */
 - add() 
 - set()
+yani iterator pointer gibi düşünebilirsin liste üzerinde hareket ediyor. ve bulunduğu konumda işlemler yapıyor :))
