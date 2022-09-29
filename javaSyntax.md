@@ -278,6 +278,8 @@ Bu zamana kadar yahu String bir değişken tipi oyle düşün dedim ya. Aslında
 - int indexOf(char) parametre olarak gönderilen karterin Stringin kaçıncı stringinde olduğunu gösterir. [Örenk](https://github.com/NecmiyeSoylu/java_examples/blob/master/indexOfChar.java)
 - String replace(String str1,String str2); bu fonksiyon bizim stringimizde parametre olarak berilen ilk string ile verilen ikinci stringi değiştirerek yeni bir string dödürür. Aynın şekilde asıl stringimizi değiştiremez. [örnke](https://github.com/NecmiyeSoylu/java_examples/blob/master/StringReplace.java)
 - boolean contains("string"); girilen değeer srtringimiz içinde geçiyor mu diye kontrol eder. [örenek]https://github.com/NecmiyeSoylu/java_examples/blob/master/stringContains.java)
+bunlar birkaç tanesi daha pek çok fonksiyon var :))
+
 ### Fonksiyonlar
 C'deki fonksiyonları biliyorsun. Burada da aynı *return_tipi Fonksiyon_adi(paremetre_listesi)* bu tipi yine kullanıyoruz bunaek olarak. Dikkat edersen main'in başına static yazmıştık, bir metodun da mainden çağırılabilmesi için static olması gerekiyor. (başına static yazıyoruz yani :)) Birde erişim belirteçleri var. yine main üzerinden bakacak olursak public static void main diyoruz buaraki public erişim belirtecidir. Diğer sınıflardan da erişilebilir olduğunu gösterir. metodlarını yazarklen bunu belirtmek zorunda değilsin bu aşamada bu önemli değil. oop kısmına geçince bundan detaylı bahsederiz.
                 public static void main()
@@ -361,4 +363,59 @@ burada < tipsiz > diye bir genel tip belirledik. Fonksiyonda bu tipin kullanıla
                 }
 
 ### Liste
+EEE pointer yok dedin o zaman liste nereden çıktı? Şimdi burada pointer kullanarak düğümlerle bağlayark listeyi kendimiz yapmayacağız. yine sınıflar ve bunlar içindeki metodlar sayesinde bu işi java'ya yaptırıcaz. bunun için iki sınıf kullanabiliriz ArrayList ve LinkedListed. Bunların arasındaki fark algoritmaları buna bağlı olarakta hızlarıdır. ArrayLİstte bir eleman silindiğinde yada eklendiğinde tüm elemnalr ötelendiğinden zaman kaybedilir. LinkedList'e ise arama konusunda yavaştır. Biliyorsun C'de de arraylar arama konusunda daha hzlıydı aynı mantık. ooo ArrayList array mi dersen; Dostum arraylist arrayin dinamikleşmiş hali diyebilriz. Çokta takılmayalım. :)) ikiside liste.
+                import java.util.*;// sınıfı dahil etmeyi unutmayalım
+                public class arrayList
+                {
+                    public static void main(String[] Soylu)
+                    {
+                        ArrayList list=new ArrayList();// listemizi oluşturduk
+                        
+                        list.add("ismail abi");// add fonksiyonu ile rahatlıkla listemize eleman ekleyebiliriz
+                        list.add("erdal bakkal");
+                        list.add("mecnun");
+                        
+                        list.remove(1);// remove fonksiyonu ile listenin istediğimiz elemanını listeden çıkartabiliriz
+                        
+                        list.add(1,"yavuz");// listenin belli bir yerine eleman eklemek için kullanılan ekleme fonksiyonu
+                    
+                        /*------- şimdi LinkedList için -------*/
 
+                        LinkedList list_=new LinkedList(); //listemizi oluşturuyoruz
+                        
+                        list_.add("soylu");
+                        list_.add("manisa");
+                        list_.add("karaca");
+
+                        list_.remove(1);
+                        
+                        list_.add(3,"cem");// gördüğün gibi metodlar arraylist ve linkedlist için aynı :))
+                    }
+                }
+Dostum gördüğün gibi bizim kendimiz yaptığımız eklemeleri çıkarmalrı sınıflardaki metodlar yapıyor. fonksiyonları hazır yazmışlar bizde kullanıyoruz. Metodlar bu kadar değil nesnenin adını yazıp nokta koyarsan derleyici kullanabileceğin metodları sana önerir.
+peki nasıl yazdıracağız :)) O zamn java'da Iterator kullanımı diyelim. Kırmızı kalemle başlık atalım :))
+                import java.util.*;
+                public class printList 
+                {
+                    public static void main(String[] Soylu)
+                    {
+                        ArrayList list=new ArrayList();
+                        for(int i=0;i<10;i++)
+                            list.add(i);
+                        
+                        Iterator a=list.iterator();
+                        // odaklanalım. Iterator bir sınıf bu sınıftan bir nesne oluşturuyoruz. arraylist objesi ile de iterator() fonksiyonunu çalıştırıyoruz.
+                        // bu metod obje returluyor. bu returlelnen objeyi yeni oluşturduğumuz nesneye  atıyoruz :))
+                        // iterator() metodunun Iterotor snıfı ile aynı isimli olmasına aldanmayınız ArrayList 'in objesi çalıştırdığına göre ArrayList sınıfına ait :))
+                        
+                        // peki bukadar işi neden yaptık? Iterator sınıfındaki metodlar ile listemizde dolaşacağız :))
+
+                        while(a.hasNext())
+                            System.out.println(a.next());
+                    
+                        //Iterotor sınıfında sıkça kullanacağımız birkaç fonksiyon
+                        //-> hasNext() bir sonrakinde eleman var mı diye kontrol eder. varsa true döndürür.
+                        //-> next() bir sonraki elemanı döndürür.
+                    }    
+                }
+yazdırma için birde listIterator sınıfını kullanabiliriz. Bu diğerine nispeten daha gelişmiş metodlara sahip. Iterator sınıfında sadece ileri doğru gideblirken listIterator sınıfında ise geri de yapılabilir. 
