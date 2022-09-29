@@ -16,7 +16,5 @@ public class ListIterator_
 
         //LİstIterator'ın sahip olduğu metodlar
         //hasPrevious() previous() previousIndex() nextIndex() add() set()
-
-        
     }    
 }

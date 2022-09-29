@@ -419,3 +419,56 @@ peki nasıl yazdıracağız :)) O zamn java'da Iterator kullanımı diyelim. Kı
                     }    
                 }
 yazdırma için birde listIterator sınıfını kullanabiliriz. Bu diğerine nispeten daha gelişmiş metodlara sahip. Iterator sınıfında sadece ileri doğru gideblirken listIterator sınıfında ise geri de yapılabilir. 
+                import java.io.*;
+                import java.util.*;
+                public class ListIterator_ 
+                {
+                    public static void main(String[] Soylu)
+                    {
+                        ArrayList list=new ArrayList();
+                        list.add("hasan çelebi");
+                        list.add("emrullah");
+                        list.add("1.5 iskender :)");
+
+                        ListIterator itr=list.listIterator();
+                        
+                        while(itr.hasNext())
+                            System.out.println(itr.next());
+                    }    
+                }
+LİstIterator'ın sahip olduğu ek metodlar
+- boolean hasPrevious(void) 
+- ArrayList previous(void) 
+- int previousIndex(void) 
+- int nextIndex()                
+                import java.util.*;
+                import java.io.*;
+                public class has_previous 
+                {
+                    public static void main(String[] Soylu)
+                    {
+                        ArrayList list=new ArrayList();
+                        
+                        list.add("sheggy");
+                        list.add("velma");
+                        list.add("scooby");
+
+                        ListIterator itr=list.listIterator(3);// içine index yazdığımızda bu indexteki elemana gider direkt
+                        
+                        System.out.println(itr.previousIndex());
+
+                        while(itr.hasPrevious())
+                            System.out.println(itr.previous());
+                        
+                        System.out.print(itr.nextIndex());
+                    }    
+                }
+                /* Output
+                    2
+                    scooby
+                    velma
+                    sheggy
+                    0 
+                */
+- add() 
+- set()
