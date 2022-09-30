@@ -1,15 +1,14 @@
 import java.util.*;
-import java.io.*;
 public class IteratorAdd 
 {
     public static void main(String[] Soylu)
     {
-        ArrayList list=new ArrayList();
+        ArrayList<String> list=new ArrayList<>();
         list.add("polat");
         list.add("memati");
         list.add("abduley");
 
-        ListIterator itr=list.listIterator();//bir nevi pointer atıyormuşuz gibi düşünelim
+        ListIterator <String>itr=list.listIterator();//bir nevi pointer atıyormuşuz gibi düşünelim
         
         itr.add("elif");
         
@@ -20,7 +19,7 @@ public class IteratorAdd
             System.out.println(itr.next());
         System.out.println();
         
-        ListIterator itr2=list.listIterator();
+        ListIterator<String> itr2=list.listIterator();
         itr2.next();
         itr2.set(itr.previous());
         
@@ -34,5 +33,7 @@ public class IteratorAdd
     elif
     polat
     memati
+    abduley
+
     abduley
 */

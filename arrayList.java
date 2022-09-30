@@ -3,7 +3,7 @@ public class arrayList
 {
     public static void main(String[] Soylu)
     {
-        ArrayList list=new ArrayList();// listemizi oluşturduk
+        ArrayList<String> list=new ArrayList<>();// listemizi oluşturduk
         
         list.add("ismail abi");// add fonksiyonu ile rahatlıkla listemize eleman ekleyebiliriz
         list.add("erdal bakkal");
@@ -15,7 +15,7 @@ public class arrayList
     
         /*------- şimdi LinkedList için -------*/
 
-        LinkedList list_=new LinkedList(); //listemizi oluşturuyoruz
+        LinkedList<String> list_=new LinkedList<>(); //listemizi oluşturuyoruz
         
         list_.add("soylu");
         list_.add("manisa");

@@ -3,11 +3,11 @@ public class printList
 {
     public static void main(String[] Soylu)
     {
-        ArrayList list=new ArrayList();
+        ArrayList<Integer> list=new ArrayList<>();
         for(int i=0;i<10;i++)
             list.add(i);
         
-        Iterator a=list.iterator();
+        Iterator<Integer> a=list.iterator();
         // odaklanalım. Iterator bir sınıf bu sınıftan bir nesne oluşturuyoruz. arraylist objesi ile de iterator() fonksiyonunu çalıştırıyoruz.
         // bu metod obje returluyor. bu returlelnen objeyi yeni oluşturduğumuz nesneye  atıyoruz :))
         // iterator() metodunun Iterotor snıfı ile aynı isimli olmasına aldanmayınız ArrayList 'in objesi çalıştırdığına göre ArrayList sınıfına ait :))

@@ -346,7 +346,7 @@ tipsiz fonksiyon oluşturucaz. yukarıda farklı tipte paremetrelere sahip fonks
                         return x;
                     }
                 }
-burada < tipsiz > diye bir genel tip belirledik. Fonksiyonda bu tipin kullanılacağını belirtmek için static'ten önce bunu yazdık   C++'da < template > yazıyorduk ya o mantık. sonra normla int der gibi bu değişken tipini rahatlıla kullandık. < tipsiz > dediğimizde belli bir tip yoktu. biz bu fonksiyona int gönderdiğimizde artık o tipsiz den kasıt int oldu ve ona göre işleme devam etti. C++'taki template'den biraz farklı. C++'da template tipindeki değişkenlerle işlem yapabiliyordu. burada ise tipin n eolduğu belli olmadığı işlem yapamazsın diyor. Sadece aynı tipteki başka değişkene atama yapabliyoruz. işte buda daha çok class ve list kullanımı için. 
+burada < tipsiz > diye bir genel tip belirledik. Fonksiyonda bu tipin kullanılacağını belirtmek için static'ten önce bunu yazdık   C++'da < template > yazıyorduk ya o mantık. sonra normla int der gibi bu değişken tipini rahatlıla kullandık. < tipsiz > dediğimizde belli bir tip yoktu. biz bu fonksiyona int gönderdiğimizde artık o tipsiz den kasıt int oldu ve ona göre işleme devam etti. C++'taki template'den biraz farklı. C++'da template tipindeki değişkenlerle işlem yapabiliyordu. burada ise tipin n eolduğu belli olmadığı işlem yapamazsın diyor. Sadece aynı tipteki başka değişkene atama yapabliyoruz. işte buda daha çok class ve list kullanımı için. Faydalandığım [web site](http://www.ugurkizmaz.com/blog/java-generic-sınıflar). İncelerseniz yardımcı olabilir.
                 public class genericMethod3 
                 {
                     static < generic, generic2 > void fonk(generic a, generic2 b)
@@ -363,13 +363,14 @@ burada < tipsiz > diye bir genel tip belirledik. Fonksiyonda bu tipin kullanıla
                 }
 
 ### Liste
-EEE pointer yok dedin o zaman liste nereden çıktı? Şimdi burada pointer kullanarak düğümlerle bağlayark listeyi kendimiz yapmayacağız. yine sınıflar ve bunlar içindeki metodlar sayesinde bu işi java'ya yaptırıcaz. bunun için iki sınıf kullanabiliriz ArrayList ve LinkedListed. Bunların arasındaki fark algoritmaları buna bağlı olarakta hızlarıdır. ArrayLİstte bir eleman silindiğinde yada eklendiğinde tüm elemnalr ötelendiğinden zaman kaybedilir. LinkedList'e ise arama konusunda yavaştır. Biliyorsun C'de de arraylar arama konusunda daha hzlıydı aynı mantık. ooo ArrayList array mi dersen; Dostum arraylist arrayin dinamikleşmiş hali diyebilriz. Çokta takılmayalım. :)) ikiside liste.
+EEE pointer yok dedin o zaman liste nereden çıktı? Şimdi burada pointer kullanarak düğümlerle bağlayark listeyi kendimiz yapmayacağız. yine sınıflar ve bunlar içindeki metodlar sayesinde bu işi java'ya yaptırıcaz. bunun için iki sınıf kullanabiliriz ArrayList ve LinkedListed. Bunların arasındaki fark algoritmaları buna bağlı olarakta hızlarıdır. ArrayLİstte bir eleman silindiğinde yada eklendiğinde tüm elemnalr ötelendiğinden zaman kaybedilir. LinkedList'e ise arama konusunda yavaştır. Biliyorsun C'de de arraylar arama konusunda daha hzlıydı aynı mantık. ooo ArrayList array mi dersen; Dostum arraylist arrayin dinamikleşmiş hali diyebilriz. Çokta takılmayalım. :)) ikiside liste. 
+Birde hocam Biz C'de liste yapacağımız zaman struct oluşturuyorduk içine güzelce iztediğimiz deişken tipini koyabiliyorduk. İşte burada da listemizin tipini belli etmek için <> işaretini kullanıcaz. 
                 import java.util.*;// sınıfı dahil etmeyi unutmayalım
                 public class arrayList
                 {
                     public static void main(String[] Soylu)
                     {
-                        ArrayList list=new ArrayList();// listemizi oluşturduk
+                        ArrayList< String > list=new ArrayList<>();// listemizi oluşturduk
                         
                         list.add("ismail abi");// add fonksiyonu ile rahatlıkla listemize eleman ekleyebiliriz
                         list.add("erdal bakkal");
@@ -381,7 +382,7 @@ EEE pointer yok dedin o zaman liste nereden çıktı? Şimdi burada pointer kull
                     
                         /*------- şimdi LinkedList için -------*/
 
-                        LinkedList list_=new LinkedList(); //listemizi oluşturuyoruz
+                        LinkedList< String > list_=new LinkedList<>(); //listemizi oluşturuyoruz
                         
                         list_.add("soylu");
                         list_.add("manisa");
@@ -393,17 +394,18 @@ EEE pointer yok dedin o zaman liste nereden çıktı? Şimdi burada pointer kull
                     }
                 }
 Dostum gördüğün gibi bizim kendimiz yaptığımız eklemeleri çıkarmalrı sınıflardaki metodlar yapıyor. fonksiyonları hazır yazmışlar bizde kullanıyoruz. Metodlar bu kadar değil nesnenin adını yazıp nokta koyarsan derleyici kullanabileceğin metodları sana önerir.
-peki nasıl yazdıracağız :)) O zamn java'da Iterator kullanımı diyelim. Kırmızı kalemle başlık atalım :))
+Yukarıdaki orenekte string yazdık ama tabiki listeye sadece string yazmak zorunda zorunda değiliz. Hatta biz struct'ın içine farklı tipte değişkneler tanımlayabiliyorduk buradada yapabiliriz 
+Peki nasıl yazdıracağız :)) O zamn java'da Iterator kullanımı diyelim. Kırmızı kalemle başlık atalım :))
                 import java.util.*;
                 public class printList 
                 {
                     public static void main(String[] Soylu)
                     {
-                        ArrayList list=new ArrayList();
+                        ArrayList < Imteger > list=new ArrayList<>();
                         for(int i=0;i<10;i++)
                             list.add(i);
                         
-                        Iterator a=list.iterator();
+                        Iterator< Integer > a=list.iterator();
                         // odaklanalım. Iterator bir sınıf bu sınıftan bir nesne oluşturuyoruz. arraylist objesi ile de iterator() fonksiyonunu çalıştırıyoruz.
                         // bu metod obje returluyor. bu returlelnen objeyi yeni oluşturduğumuz nesneye  atıyoruz :))
                         // iterator() metodunun Iterotor snıfı ile aynı isimli olmasına aldanmayınız ArrayList 'in objesi çalıştırdığına göre ArrayList sınıfına ait :))
@@ -425,12 +427,12 @@ yazdırma için birde listIterator sınıfını kullanabiliriz. Bu diğerine nis
                 {
                     public static void main(String[] Soylu)
                     {
-                        ArrayList list=new ArrayList();
+                        ArrayList< String > list=new ArrayList<>();
                         list.add("hasan çelebi");
                         list.add("emrullah");
                         list.add("1.5 iskender :)");
 
-                        ListIterator itr=list.listIterator();
+                        ListIterator<String> itr=list.listIterator();
                         
                         while(itr.hasNext())
                             System.out.println(itr.next());
@@ -447,13 +449,13 @@ LİstIterator'ın sahip olduğu ek metodlar
                 {
                     public static void main(String[] Soylu)
                     {
-                        ArrayList list=new ArrayList();
+                        ArrayList< String > list=new ArrayList<>();
                         
                         list.add("sheggy");
                         list.add("velma");
                         list.add("scooby");
 
-                        ListIterator itr=list.listIterator(3);// içine index yazdığımızda bu indexteki elemana gider direkt
+                        ListIterator< String > itr=list.listIterator(3);// içine index yazdığımızda bu indexteki elemana gider direkt
                         
                         System.out.println(itr.previousIndex());
 
@@ -478,12 +480,12 @@ yani iterator pointer gibi düşünebilirsin liste üzerinde hareket ediyor. ve 
                 {
                     public static void main(String[] Soylu)
                     {
-                        ArrayList list=new ArrayList();
+                        ArrayList< String > list=new ArrayList<>();
                         list.add("polat");
                         list.add("memati");
                         list.add("abduley");
 
-                        ListIterator itr=list.listIterator();//bir nevi pointer atıyormuşuz gibi düşünelim
+                        ListIterator< String > itr=list.listIterator();//bir nevi pointer atıyormuşuz gibi düşünelim
                         
                         itr.add("elif");
                         
@@ -494,7 +496,7 @@ yani iterator pointer gibi düşünebilirsin liste üzerinde hareket ediyor. ve 
                             System.out.println(itr.next());
                         System.out.println();
                         
-                        ListIterator itr2=list.listIterator();
+                        ListIterator< String > itr2=list.listIterator();
                         itr2.next();
                         itr2.set(itr.previous());
                         
@@ -509,6 +511,8 @@ yani iterator pointer gibi düşünebilirsin liste üzerinde hareket ediyor. ve 
                     polat
                     memati
                     abduley
+
+                    abduley
                 */
 - void set(eleman)
 
@@ -518,11 +522,11 @@ yani iterator pointer gibi düşünebilirsin liste üzerinde hareket ediyor. ve 
                 {
                     public static void main(String[] Soylu)
                     {
-                        ArrayList list=new ArrayList();
+                        ArrayList< String > list=new ArrayList<>();
                         list.add("cem karaca");
                         list.add("barış manço");
                         list.add("anadolu");
-                        ListIterator itr=list.listIterator();
+                        ListIterator< String > itr=list.listIterator();
                         while(itr.hasNext())// görüğün gibi hasNext() sadece bir sonraki var mı diye kontrol eder ilerletmez next() ilerletir
                             System.out.println(itr.next());
                         System.out.println();
@@ -530,9 +534,10 @@ yani iterator pointer gibi düşünebilirsin liste üzerinde hareket ediyor. ve 
                         itr.previous();//son elemadan sonra listenin dışına çıktı null'a geldi gibi düşünelim. son elemana tekrar gelmek için previous() fonksiyonunu çalıştırdık
                         itr.set("anadolu rock");//görüldüğü üzere itr üzerinde bulunduğu elemnanı değiştiri. değişiklikler kalıcı olur liste  sonuçta
                         
-                        ListIterator itr2=list.listIterator();
+                        ListIterator< String > itr2=list.listIterator();
                         while(itr2.hasNext())
                             System.out.println(itr2.next());    
                     }    
                 }
 dur kaçma bitmedi daha ;))
+Listeyi oluşturduk ekledik sildik çok güzel ama bizim listemizin türü olabilir mi?
