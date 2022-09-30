@@ -539,4 +539,4 @@ yani iterator pointer gibi düşünebilirsin liste üzerinde hareket ediyor. ve 
                             System.out.println(itr2.next());    
                     }    
                 }
-Burası java'ya hızlı bir girişti. Ne var ne yok üstten baktık. Asıl OOp üzerine çalıştuğımızda java yı anlamış olacağız. O zaman OOP yazısında görüşmek üzere :))
+Burası java'ya hızlı bir girişti. Ne var ne yok üstten baktık. Asıl OOp üzerine çalıştığımızda java yı anlamış olacağız. O zaman OOP yazısında görüşmek üzere :))
