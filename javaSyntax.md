@@ -438,7 +438,7 @@ yazdırma için birde listIterator sınıfını kullanabiliriz. Bu diğerine nis
                             System.out.println(itr.next());
                     }    
                 }
-LİstIterator'ın sahip olduğu ek metodlar
+ListIterator'ın sahip olduğu ek metodlar
 - boolean hasPrevious(void) 
 - ArrayList previous(void) 
 - int previousIndex(void) 
@@ -539,5 +539,4 @@ yani iterator pointer gibi düşünebilirsin liste üzerinde hareket ediyor. ve 
                             System.out.println(itr2.next());    
                     }    
                 }
-dur kaçma bitmedi daha ;))
-Listeyi oluşturduk ekledik sildik çok güzel ama bizim listemizin türü olabilir mi?
+Burası java'ya hızlı bir girişti. Ne var ne yok üstten baktık. Asıl OOp üzerine çalıştuğımızda java yı anlamış olacağız. O zaman OOP yazısında görüşmek üzere :))
