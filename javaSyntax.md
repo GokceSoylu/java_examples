@@ -17,7 +17,8 @@ ekrana yazdırmak için kullanabileceğimiz üç farklı method var. print, prin
 System.out.print() System.out.println()  System.out.printf() şeklindedir. evet gerçekten boyle uzun uzun yazılıyor :))
 bunlardan printf normal C deki printf ile aynı. tek bir farkı var \n \t gibi ifadeleri % ile yazdiriyoruz. %n %t şeklinde :))
                 
-                ``` java 
+                
+``` java 
                 public class printf_
                 {
                     public static void main(String[] args)
@@ -25,8 +26,9 @@ bunlardan printf normal C deki printf ile aynı. tek bir farkı var \n \t gibi i
                         System.out.printf("%s%n%s","Necmiye","SOYLU");
                     } 
                 } 
-                ```
+```
 print ise c++'daki cout'a benziyor. >> yerine + kullanıyor sadece :). println ise yazdırma iişelmi bittikten sonra bir sonraki satıra geçiyor.
+``` java              
                 public class println_ 
                 {
                     public static void main(String[] args)
@@ -54,15 +56,17 @@ print ise c++'daki cout'a benziyor. >> yerine + kullanıyor sadece :). println i
                 *  the aswer 0.5
                 *  the answer 0.0
                 */
-
+```
 ### İnput
 Bu biraz değişik. Scanner sınıfından bir nesne oluşturup, bu nesne sayesinde input metodlarına ulaşıyoruz. 
+``` java                
                 public static void main(String[] args)
                 {
                     int a;
                     Scanner in=new Scanner(System.in);
                     a=in.nextInt();
                 }
+```
 nesneyi oluşturma kısmı sabit. Scanner obje_adı = new Scanner(System.in) bu şekilde input almamızı sağlayacak nesnemizi oluşruruz 
 daha sonra alacağımız veri tipine göre nesne kullanırız.
 
@@ -90,10 +94,12 @@ bunun üzerinde durmayacağım for, while, do while, break, continue, switch hat
 ### Diziler
 degisken_tipi [] dizi_adı; şeklinde oluşturulur. Her değişken tipinde oluşturulabilir. dizi mantığı kullanımı, C ile aynı sadece 
 initialing kısmında bir farklılık var. 
+``` java                
                 int[] a;// dikkat edelim [indis değeri yazmadık]
                 int[] a={1,2,3};
                 int[] a=new int[2];// new kullanırken boyut belirttik
                 int[] a=new int[]{1,2,3};// initialize edeceksek new kullansakta boyut yazmadık
+```
 Şahsen aklımda şöyle kalıyor initilize edeceğimiz yerde java ben zaten kaç tane olduğunu görüyorum daha niye yazıyosun diyor :)) 
 int a[]; yazımıda doğrudur. hata almayız. özellikleri C'deki ile aynı. sadece  char dizisinde ufak farklılıklar var.
 C'de string diye bir değişken tipi yoktu. O yüzden Char dizisi aynı zamanda string olarak kullanılıyordu. Char dizisi hem kendi 
@@ -105,6 +111,7 @@ sadece char dizisine ait özelliklere sahip, stringin özelliklerini taşımaz.
 - char a[]={'s','o','y','l','u'}; doğru :)) işte böyle yola gel 😁
 
 Yazdırmaya alakalıda bize kolaylık sağlaycak bir fonksiyonıumuz var *length* 
+``` java                
                 public class array_length 
                 {
                     public static void main(String[] Soylu)
@@ -114,8 +121,9 @@ Yazdırmaya alakalıda bize kolaylık sağlaycak bir fonksiyonıumuz var *length
                             System.out.print(a[i]+" ");
                     }    
                 }
-
+```
 Kolaylılar bitmiyordu :)) birde foreach var. foreach'i dizilier liste gibi aynı sıralı değişkenlerde kullanılabilir.
+``` java                
                 public class foreach 
                 {
                     public static void main(String[] Soylu)
@@ -125,7 +133,7 @@ Kolaylılar bitmiyordu :)) birde foreach var. foreach'i dizilier liste gibi ayn�
                             System.out.print(i+" ");
                     }    
                 }//anladık mı mevzuyu? dizimiz tipinde bir değişken oluşturuyoruz bu değişkene dizimizin elemalarını teker teker atıyoruz :)
-
+```
 foreach mantığını [örnek](https://github.com/NecmiyeSoylu/java_examples/blob/master/foreach2.java) ile netleştirebiliriz. 
 Char dizisi foreach kullanımı [örneği](https://github.com/NecmiyeSoylu/java_examples/blob/master/foreachChar.java).
 
@@ -133,7 +141,7 @@ Char dizisi foreach kullanımı [örneği](https://github.com/NecmiyeSoylu/java_
 int[][] aa;
 float[][] aa;
 char[][] aa;
-                
+``` java                
                 public static void main(String[] args)
                 {
                     int row,column;
@@ -155,9 +163,9 @@ char[][] aa;
                 //  *)int a[2][2]; şklinde tanımlama yapamayız!
                 //  *)new malloc gibi olduğu için new ile yer değişken  kadar yer alınabilir. 
                 //  *)int[][] m; şeklinde pekte gözümüzün alışkın olmadığı bir tanımlama doğru :)) ki anladığım kadarıyla yaygın olanda bu :)
-
+```
 C'de atama yapmazsak rastgele sayılar atar. Ancak Java'da atma yapmadığımızda 0 atar. *length* fonksiyonunu burada da kullanabiliriz
-                
+``` java                
                 public class arrayLength 
                 {
                     public static void main(String[] Soylu)
@@ -169,8 +177,9 @@ C'de atama yapmazsak rastgele sayılar atar. Ancak Java'da atma yapmadığımız
                                     System.out.print(aa[i][j]+" ");
                     }    
                 }//dikkat edelim aa.length bize satır sayısını, aa[0].length bize sutun sayısını verir.
+```
 bir de foreach kullanımına bakalım
-               
+``` java               
                 public class foreachMatris 
                 {
                     public static void main(String[] Soylu)
@@ -181,14 +190,15 @@ bir de foreach kullanımına bakalım
                                 System.out.println(j);
                     }    
                 }// maytis mantiğini biliyoruz. ilk boyuttaki her elaman bir dizi gibidir aa[0] üç elemanlı bir dizidir :)) 
+```
 ### String 
 Geldi gönlümün efendisi :) 
 C'de normal string yapacağımız zaman char[] yapıyorduk. char str[]="necmiye"; gibi. Bu sabit oluyordu ve daha sonra 
 değiştirilemiyordu. İstediğimiz zaman %s ile direkt yazdırabiliyor yada istediğimiz elemana str [2] diyerek ulaşbiliyorduk. ayrıca 
 2 elmanlı bir char dizisi değimiz zaman hem char a[2]=('n','s'); hem char a[2]=("necmiye","soylu"); mümkündü. 
 Burada ise String tanımladığımız zaman en önemli farkı isteğimiz zaman değiştirebiliyor, atamayı istediğimiz zaman yapabiliyoruz.[örenk](https://github.com/NecmiyeSoylu/java_examples/blob/master/initialize_.java) [örnek2](https://github.com/NecmiyeSoylu/java_examples/blob/master/stringArray.java)ikinci örnek daha iyi :))
-             
-              ``public class initialize_
+``` java             
+                public class initialize_
                 {
                     public static void main(String[] args)
                     {
@@ -204,14 +214,14 @@ Burada ise String tanımladığımız zaman en önemli farkı isteğimiz zaman d
                         str1="KBU";
                     }
                 }//aklıma gelen tüm atama şekillerini yazdım :)) ``
-
+```
 Stringin tek bir elamanına ulaşmak istersiek charAt() fonksiyonunu kullanırız. paremetre olarak ulaşmak istediğimiz elmanın 
 indexini göndeririz. orneğin tek bir elemanını yazdırmak için System.out.println(str1.charAt(0)); şeklinde yazabiliriz.
 CharAt() fonkisiyonu bizden indexi alır ve ulaştığı char'ı döndürür. bu yüzden bu fonksiyonla Stringin  belirli bir elemanını 
 değiştiremeyiz. Bunun için dolaylı yöntemler kullanıcaz. setCharAt(index,'yeni_karakter') fonksiyonu bunlardan biri. ancak bu 
 fonksiyon StringBuilder tipinde kullanılabilir. O zaman bu tipte yeni bir string oluturur sonra stringini buna atar ve 
 değiştirirsin. aşşağıdaki öreneği incelerseniz daha net olur.
-                
+``` java                
                 public class string_eleman 
                 {
                     public static void main(String[] args)
@@ -224,10 +234,10 @@ değiştirirsin. aşşağıdaki öreneği incelerseniz daha net olur.
                         str=str_new;
                     }   
                 }
-
+```
 uzatma yahu direkt str=str2; yap dersen, malesef tipleri farklı olduğu için bu şekilde bir atama yapamıyoruz. Böyle new kullanarak 
 dolaylı yoldan kopyalıyoruz :)) Char diziyide string yapabiliriz. Bu kopyalama mantığına benziyor.
-                
+``` java                
                 public class charString 
                 {
                     public static void main(String[] Soylu)
@@ -237,11 +247,11 @@ dolaylı yoldan kopyalıyoruz :)) Char diziyide string yapabiliriz. Bu kopyalama
                         System.out.print(theArray);
                     }    
                 }
-
+```
 Gelelim string dizisine. ops! string zaten dizi değil miydi?😳 Hayır dostum değil. string bir değişken tipi. Zaten bu yüzden tek 
 bir karaketerine ulaşmak istediğimizde karnımız çatlıyo. Bak, şimdi string dizisinin bir elmanına ulaşırken hiç sorun yaşamıyıcaz 
 çünkü normal bir dizi :))
-                
+``` java                
                 public static void main(String[] Soylu)
                 {
                     String[] dizi={"atama","sekli"};
@@ -253,10 +263,10 @@ bir karaketerine ulaşmak istediğimizde karnımız çatlıyo. Bak, şimdi strin
                 
                     dizi2[1]="ata"; //değiştirdim işte :))
                 }    
-
+```
 nasıl yazdırıcaz dersen C'de yaptığımız gibi döngüye sokup elemanları tek tek yazdırabilirsin. Yada *Arrays.toString()* 
 fonksiyonunu kullanabilirsin. ancak direkt print(str) şeklinde yazdıramzsın. İnceleyelim.
-                
+``` java                
                 import java.util.Arrays; // fonksiyon için kütüphanemizi dahil ediyoruz :))
                 public class stringPrint 
                 {
@@ -276,11 +286,11 @@ fonksiyonunu kullanabilirsin. ancak direkt print(str) şeklinde yazdıramzsın. 
                 * [Ljava.lang.String;@251a69d7
                 * [necmiye, soylu, kbu]
                 */  
-
+```
 Çok boyutlu String dizi. String[][] str; şeklinde oluşturulur. Yine parantezlerin içine sayı yazılmaz. 
 String[][] str={{"necmiye",soylu"},{"kbu","mühendislik"},{"bligisayar","mühendisligi"}}; şeklinde initilize edebililriz. 
 yazdırmaya gelince *deepToString()* fonksiyonunu kullanıcaz
-                
+``` java                
                 import java.util.Arrays;
                 public class stringPrintMulti 
                 {
@@ -293,10 +303,10 @@ yazdırmaya gelince *deepToString()* fonksiyonunu kullanıcaz
                 /* Output
                 * [[necmiye, soylu], [kbu, muhendislik], [bilgisayar, mühendislik]]
                 */
-
+```
 şşş sakince [örneğe](https://github.com/NecmiyeSoylu/java_examples/blob/master/tryForString.java) tıklayınız. 
 bir de forech ile yazdırmaya bakalım
-                
+``` java                
                 public class foreachString 
                 {
                     public static void main(String[] Soylu)
@@ -316,7 +326,7 @@ bir de forech ile yazdırmaya bakalım
                 //çünkü string int gibi bir değişken türüdür. dizi oluşturulabilen bir değişken tipi. Şimdi biz bir int değişkenşn ben sadece 3.byte'ına
                 //ulaşmka istiyorum diyebiliyor muyuz? String'de de durum aynı. 
                 //bu yüzden cahrAt(), setCharAt() vb fonksiyonlarına ihtiyaç duyarızr:)) 
-
+```
 Bu zamana kadar yahu String bir değişken tipi oyle düşün dedim ya. Aslında değil🤦🏻‍♀️ String bir sınıf, Biz bir değişken 
 oluşturur oluşturu gibi String str; dediğimizde de aslında bir nesne oluşturmuş oluyoruz🤷🏻‍♀️. 
 HAni [şöyle](https://github.com/NecmiyeSoylu/java_examples/blob/master/charString.java) bir örneğimiz vardı biz String str="kbu"; dediğimizde de aslında default 
@@ -339,7 +349,7 @@ olarak. Dikkat edersen main'in başına static yazmıştık, bir metodun da main
 diyoruz buaraki public erişim belirtecidir. Diğer sınıflardan da erişilebilir olduğunu gösterir. metodlarını yazarklen bunu 
 
 belirtmek zorunda değilsin bu aşamada bu önemli değil. oop kısmına geçince bundan detaylı bahsederiz.
-                
+``` java                
                 public static void main()
                 {
                     int a=10, b=20, c;s
@@ -349,11 +359,12 @@ belirtmek zorunda değilsin bu aşamada bu önemli değil. oop kısmına geçinc
                 {
                     return x+y;
                 }
+```
 bir şey dikkatini çekti mi. prototype yazmadık😳. java'da ister  main'den önce olsun ister sonra prototype yazmaya gerek yok :))
 
 C++'tan hatırladığımız bir overloading olayı vardı burada da yapalım mı? Öncelikle nedir bu overloading?
 aynı isimli fakat farklı paremetre listeli fonksiyonlar yazabiliyoruz. öreneğin
-                
+``` java                
                 static int addition(int a, int b)
                 {
                     return a+b
@@ -368,7 +379,7 @@ aynı isimli fakat farklı paremetre listeli fonksiyonlar yazabiliyoruz. örene�
                     float m=7,8, n=9.7;
                     z=addition()
                 }//afilli 💃🏻
-
+```
 peki ya bunu nasıl yapıyor? 
 Derleyici her fonksiyon iiçn önce *__Z* ifadesini koyar sonra fonksiyonun harf sayısını koyar yukarısı için addition 8 harf *__Z8* 
 olur. daha sonra paremetre listesine bakar. int ,int o zaman *Z__8ii* olur. Bu sayede isimleri aynı ama parametre sayıları yada 
@@ -387,7 +398,7 @@ tipsiz fonksiyon oluşturucaz. yukarıda farklı tipte paremetrelere sahip fonks
 aynı sadece paremetrelerin/retur'un tipi farklı olan metod yazmak istiyoruz. yahu adamların her şeyi aynı bir tek tip farklı bunun 
 için farklı farklı fonksiyonlar mı yazalım? hayır yazmayalıımm:)) <> bu şekil ile tipini bizim belirleyeceğimiz metodlar 
 yazılabliriz
-                
+``` java                
                 public class genericMethod 
                 {
                     public static void main(String[] Soylu)
@@ -400,9 +411,9 @@ yazılabliriz
                         System.out.print("the element is "+ t);
                     }
                 }   
-
+```
 < T > ifadesi değiştirilebilir T yerine başka bir şey de yazılabilirdi. buradaki örnekleri inceleyelim list kısmında biraz daha değiniyoruz. 
-                
+``` java                
                 public class genericMethod2 
                 {
                     public static void main(String[] Soylu)
@@ -416,14 +427,14 @@ yazılabliriz
                         return x;
                     }
                 }
-
+```
 burada < tipsiz > diye bir genel tip belirledik. Fonksiyonda bu tipin kullanılacağını belirtmek için static'ten önce bunu yazdık   
 C++'da < template > yazıyorduk ya o mantık. sonra normla int der gibi bu değişken tipini rahatlıla kullandık. < tipsiz > 
 dediğimizde belli bir tip yoktu. biz bu fonksiyona int gönderdiğimizde artık o tipsiz den kasıt int oldu ve ona göre işleme devam 
 etti. C++'taki template'den biraz farklı. C++'da template tipindeki değişkenlerle işlem yapabiliyordu. burada ise tipin n eolduğu 
 belli olmadığı işlem yapamazsın diyor. Sadece aynı tipteki başka değişkene atama yapabliyoruz. işte buda daha çok class ve list 
 kullanımı için. Faydalandığım [web site](http://www.ugurkizmaz.com/blog/java-generic-sınıflar). İncelerseniz yardımcı olabilir.
-                
+``` java                
                 public class genericMethod3 
                 {
                     static < generic, generic2 > void fonk(generic a, generic2 b)
@@ -438,7 +449,7 @@ kullanımı için. Faydalandığım [web site](http://www.ugurkizmaz.com/blog/ja
                         fonk(a,n);
                     }
                 }
-
+```
 ### Liste
 EEE pointer yok dedin o zaman liste nereden çıktı? Şimdi burada pointer kullanarak düğümlerle bağlayark listeyi kendimiz 
 yapmayacağız. yine sınıflar ve bunlar içindeki metodlar sayesinde bu işi java'ya yaptırıcaz. bunun için iki sınıf kullanabiliriz 
@@ -448,7 +459,7 @@ C'de de arraylar arama konusunda daha hzlıydı aynı mantık. ooo ArrayList arr
 hali diyebilriz. Çokta takılmayalım. :)) ikiside liste. 
 Birde hocam Biz C'de liste yapacağımız zaman struct oluşturuyorduk içine güzelce iztediğimiz deişken tipini koyabiliyorduk. İşte 
 burada da listemizin tipini belli etmek için <> işaretini kullanıcaz. 
-                
+``` java                
                 import java.util.*;// sınıfı dahil etmeyi unutmayalım
                 public class arrayList
                 {
@@ -477,13 +488,13 @@ burada da listemizin tipini belli etmek için <> işaretini kullanıcaz.
                         list_.add(3,"cem");// gördüğün gibi metodlar arraylist ve linkedlist için aynı :))
                     }
                 }
-
+```
 Dostum gördüğün gibi bizim kendimiz yaptığımız eklemeleri çıkarmalrı sınıflardaki metodlar yapıyor. fonksiyonları hazır yazmışlar 
 bizde kullanıyoruz. Metodlar bu kadar değil nesnenin adını yazıp nokta koyarsan derleyici kullanabileceğin metodları sana önerir.
 Yukarıdaki orenekte string yazdık ama tabiki listeye sadece string yazmak zorunda zorunda değiliz. Hatta biz struct'ın içine 
 farklı tipte değişkneler tanımlayabiliyorduk buradada yapabiliriz 
 Peki nasıl yazdıracağız :)) O zamn java'da Iterator kullanımı diyelim. Kırmızı kalemle başlık atalım :))
-                
+``` java                
                 import java.util.*;
                 public class printList 
                 {
@@ -508,10 +519,10 @@ Peki nasıl yazdıracağız :)) O zamn java'da Iterator kullanımı diyelim. Kı
                         //-> next() bir sonraki elemanı döndürür.
                     }    
                 }
-
+```
 yazdırma için birde listIterator sınıfını kullanabiliriz. Bu diğerine nispeten daha gelişmiş metodlara sahip. Iterator sınıfında 
 sadece ileri doğru gideblirken listIterator sınıfında ise geri de yapılabilir. 
-                
+``` java               
                 import java.io.*;
                 import java.util.*;
                 public class ListIterator_ 
@@ -529,13 +540,13 @@ sadece ileri doğru gideblirken listIterator sınıfında ise geri de yapılabil
                             System.out.println(itr.next());
                     }    
                 }
-
+```
 ListIterator'ın sahip olduğu ek metodlar
 - boolean hasPrevious(void) 
 - ArrayList previous(void) 
 - int previousIndex(void) 
 - int nextIndex()                
-                
+``` java                
                 import java.util.*;
                 import java.io.*;
                 public class has_previous 
@@ -565,10 +576,10 @@ ListIterator'ın sahip olduğu ek metodlar
                     sheggy
                     0 
                 */
-
+```
 yani iterator pointer gibi düşünebilirsin liste üzerinde hareket ediyor. ve bulunduğu konumda işlemler yapıyor :))
 - void add(eleman) 
-                
+``` java                
                 import java.util.*;
                 import java.io.*;
                 public class IteratorAdd 
@@ -609,9 +620,9 @@ yani iterator pointer gibi düşünebilirsin liste üzerinde hareket ediyor. ve 
 
                     abduley
                 */
-
+```
 - void set(eleman)
-
+``` java
                 import java.util.*;
                 import java.io.*;
                 public class iteratorSet
@@ -635,4 +646,5 @@ yani iterator pointer gibi düşünebilirsin liste üzerinde hareket ediyor. ve 
                             System.out.println(itr2.next());    
                     }    
                 }
+```
 Burası java'ya hızlı bir girişti. Ne var ne yok üstten baktık. Asıl OOp üzerine çalıştuğımızda java yı anlamış olacağız. O zaman OOP yazısında görüşmek üzere :))
