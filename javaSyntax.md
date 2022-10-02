@@ -9,17 +9,14 @@
                     }
                 }
 
-Genel yazım yukarıdaki gibidir.  "First" benim koyduğum isim bunu değiştirebiliriz. Önemli bir ayrıntı projenin adı ve sınıfın adı 
-aynı aynı olmak zorunda.  yai bu kod partı için proje ismim first.java   C deki main fonksiyonun olması gibi burada da main method 
-bulunur. (method ve fonksiyon aynı şey. Java'da fonksiyonlara method diyeceğiz). kod derlenmeye main metotdan başlanır. Ve main 
-method bulunması zorunludur. "public static void" kısmında değişiklik yapmayız. main fonksiyon public ve static olmak zorundadır. 
-arg kısmına gelince buaraya istediğin şeyi yazabilirsin. istersen mahmut yaz :)
+Genel yazım yukarıdaki gibidir.  "First" benim koyduğum isim bunu değiştirebiliriz. Önemli bir ayrıntı projenin adı ve sınıfın adı aynı aynı olmak zorunda.  yai bu kod partı için proje ismim first.java   C deki main fonksiyonun olması gibi burada da main method bulunur. (method ve fonksiyon aynı şey. Java'da fonksiyonlara method diyeceğiz). kod derlenmeye main metotdan başlanır. Ve main method bulunması zorunludur. "public static void" kısmında değişiklik yapmayız. main fonksiyon public ve static olmak zorundadır. arg kısmına gelince buaraya istediğin şeyi yazabilirsin. istersen mahmut yaz :)
 zaten void yazmamızdan anlayacağın gibi main'de return'e ihtiyacımız yok. 
 
 ### Yazdırma
 ekrana yazdırmak için kullanabileceğimiz üç farklı method var. print, println ve printf bunların syntax'ı 
 System.out.print() System.out.println()  System.out.printf() şeklindedir. evet gerçekten boyle uzun uzun yazılıyor :))
 bunlardan printf normal C deki printf ile aynı. tek bir farkı var \n \t gibi ifadeleri % ile yazdiriyoruz. %n %t şeklinde :))
+                
                 public class printf_
                 {
                     public static void main(String[] args)
@@ -27,8 +24,7 @@ bunlardan printf normal C deki printf ile aynı. tek bir farkı var \n \t gibi i
                         System.out.printf("%s%n%s","Necmiye","SOYLU");
                     } 
                 }
-print ise c++'daki cout'a benziyor. >> yerine + kullanıyor sadece :). println ise yazdırma iişelmi bittikten sonra bir sonraki 
-satıra geçiyor.
+print ise c++'daki cout'a benziyor. >> yerine + kullanıyor sadece :). println ise yazdırma iişelmi bittikten sonra bir sonraki satıra geçiyor.
                 public class println_ 
                 {
                     public static void main(String[] args)
@@ -637,6 +633,4 @@ yani iterator pointer gibi düşünebilirsin liste üzerinde hareket ediyor. ve 
                             System.out.println(itr2.next());    
                     }    
                 }
-
-Burası java'ya hızlı bir girişti. Ne var ne yok üstten baktık. Asıl OOp üzerine çalıştuğımızda java yı anlamış olacağız. O zaman 
-OOP yazısında görüşmek üzere :))
+Burası java'ya hızlı bir girişti. Ne var ne yok üstten baktık. Asıl OOp üzerine çalıştuğımızda java yı anlamış olacağız. O zaman OOP yazısında görüşmek üzere :))
