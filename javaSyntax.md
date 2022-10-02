@@ -17,13 +17,15 @@ ekrana yazdırmak için kullanabileceğimiz üç farklı method var. print, prin
 System.out.print() System.out.println()  System.out.printf() şeklindedir. evet gerçekten boyle uzun uzun yazılıyor :))
 bunlardan printf normal C deki printf ile aynı. tek bir farkı var \n \t gibi ifadeleri % ile yazdiriyoruz. %n %t şeklinde :))
                 
+                ``` java 
                 public class printf_
                 {
                     public static void main(String[] args)
                     {
                         System.out.printf("%s%n%s","Necmiye","SOYLU");
                     } 
-                }
+                } 
+                ```
 print ise c++'daki cout'a benziyor. >> yerine + kullanıyor sadece :). println ise yazdırma iişelmi bittikten sonra bir sonraki satıra geçiyor.
                 public class println_ 
                 {
