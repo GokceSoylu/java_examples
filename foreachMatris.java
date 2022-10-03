@@ -6,5 +6,16 @@ public class foreachMatris
         for(int[] i:aa)
             for(int j:i)
                 System.out.println(j);
+
+                Test test = new Test();
+                test.print();
     }    
 }// maytis mantiğini biliyoruz. ilk boyuttaki her elaman bir dizi gibidir aa[0] üç elemanlı bir dizidir :)) 
+
+class Test{
+
+    void print(){
+        System.out.println("test");
+    }
+
+}
