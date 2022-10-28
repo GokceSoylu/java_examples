@@ -85,7 +85,13 @@ fonksiyonu ile kapatmamız gerekir. Pekiştirmek için [örnek](https://github.c
 tipik char, int, float, double, char var. C'den farklı olarak boolean ve String var. boolean c++'dakı bool. true, false iki 
 şekilde olabiliyor. String ise adı üstünde string oluşturmamız sağlıyor. boyle ayrı bir değişken tipinin olması bize C'den farklı 
 ozellikler kazandırıyor. String herhangi bir fonksiyon kullanılmadan değiştiribiliyor. ancak char dizisini string gibi 
-kullanamıyoruz vb. buna string başlılığı altında detaylı değiniyorum. değişken tipler [örenk](https://github.com/NecmiyeSoylu/java_examples/blob/master/veriTipleri.java)
+kullanamıyoruz vb. buna string başlığı altında detaylı değiniyorum. Bşrde float da ufak bir farklılık var . normalde flaot a=12.2;
+desek c kabul eder ancak javaya gore noktalı sayılar double tipinde bunun float tipind olduğunu belirtmek için yanına f koymamız gerekir.
+```java
+    float a=12.2f;
+    float b=12;//bu şekilde integer olan sau-yılarda sorun yok. noktalı olursa double değil float olduğunu belirtmek için f yazarız.
+```
+ değişken tipler [örenk](https://github.com/NecmiyeSoylu/java_examples/blob/master/veriTipleri.java)
 
 ### Döngüler
 bunun üzerinde durmayacağım for, while, do while, break, continue, switch hatta if else C'dekinin aynısı syntax 'da dahil olmak 
