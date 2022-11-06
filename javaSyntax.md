@@ -95,7 +95,25 @@ desek c kabul eder ancak javaya gore noktalı sayılar double tipinde bunun floa
 
 ### Döngüler
 bunun üzerinde durmayacağım for, while, do while, break, continue, switch hatta if else C'dekinin aynısı syntax 'da dahil olmak 
-üzere hiçbir fark yok. [örnek](https://github.com/NecmiyeSoylu/java_examples/blob/master/loops.java) [örnek](https://github.com/NecmiyeSoylu/java_examples/blob/master/loops2.java)
+üzere hiçbir fark yok. [örnek](https://github.com/NecmiyeSoylu/java_examples/blob/master/loops.java) [örnek](https://github.com/NecmiyeSoylu/java_examples/blob/master/loops2.java) Sadece farklı olarak for-each var. 
+Nedir bu for each? 
+birbiri ardına devam eden değişkenler için kullanllılabir. Diziler, liste vb. mevzu arka arkaya devam etmesi. 
+Nasıl yazılır? 
+normal for() yazarız içerisine indis condition arttırma miktarı yazmaktansa, işlem yapacağimiz ifadenin türünden kend,mize yeni bir 
+değişken oluştururuz ve  : koyup değişkenimizin adını yazazarız
+```java
+                int array[]={1,2,3};
+                
+                for(int a: array) //array'in her bir elemanını sırasısyla a değişkenşne ata diyor. döngüye array bitene kdr dvm eder
+                    System.out.println(a);
+                
+                for(int i=0;i<3;i++)
+                {
+                    int a=array[i];
+                    Systme.out.println(a);
+                }
+```
+foreach mantığını [örnek](https://github.com/NecmiyeSoylu/java_examples/blob/master/foreach2.java) ile netleştirebiliriz. 
 
 ### Diziler
 degisken_tipi [] dizi_adı; şeklinde oluşturulur. Her değişken tipinde oluşturulabilir. dizi mantığı kullanımı, C ile aynı sadece 
@@ -140,7 +158,6 @@ Kolaylılar bitmiyordu :)) birde foreach var. foreach'i dizilier liste gibi ayn�
                     }    
                 }//anladık mı mevzuyu? dizimiz tipinde bir değişken oluşturuyoruz bu değişkene dizimizin elemalarını teker teker atıyoruz :)
 ```
-foreach mantığını [örnek](https://github.com/NecmiyeSoylu/java_examples/blob/master/foreach2.java) ile netleştirebiliriz. 
 Char dizisi foreach kullanımı [örneği](https://github.com/NecmiyeSoylu/java_examples/blob/master/foreachChar.java).
 
 Çok boyutlu dizilere gelirsek. Burasıda aynı.
